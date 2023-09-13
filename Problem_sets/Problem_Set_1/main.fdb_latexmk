@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber main"] 1694016409 "main.bcf" "main.bbl" "main" 1694016437
-  "main.bcf" 1694016436 106594 73360d8a83bc8b1cd04e2d617cf3a134 "pdflatex"
+["biber main"] 1694631540 "main.bcf" "main.bbl" "main" 1694631916
+  "main.bcf" 1694631915 106594 73360d8a83bc8b1cd04e2d617cf3a134 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1694016435 "/home/peter/Shcool/TFE4146_Semiconductor_Devices/Problem_sets/Problem_Set_1/main.tex" "main.pdf" "main" 1694016437
+["pdflatex"] 1694631914 "/home/peter/Shcool/TFE4146_Semiconductor_Devices/Problem_sets/Problem_Set_1/main.tex" "main.pdf" "main" 1694631916
   "/etc/texmf/web2c/texmf.cnf" 1684095615 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/peter/Shcool/TFE4146_Semiconductor_Devices/Problem_sets/Problem_Set_1/main.tex" 1694010215 1051 61dd46e2c8af5e3950cf2cc42b3d5f86 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
@@ -388,13 +388,13 @@
   "Sections//../figures/1d1.png" 1694014987 20331 3ab160a2934841bfb245036f54479145 ""
   "Sections/01.tex" 1694015366 3563 03a5d816d1f02dc9bd4b15fee384dd27 ""
   "Sections/02.tex" 1694015782 554 009a20bece77dfe2a304e629cdf9b3fc ""
-  "Sections/03.tex" 1694016435 590 49f8baa0e060a6c133122a1950086635 ""
-  "main.aux" 1694016436 1405 3d899edec1fa86a5939d68a5e8b346bc "pdflatex"
-  "main.bbl" 1694016410 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.out" 1694016436 720 999747c1b3611c53dd6c4eff83c60807 "pdflatex"
-  "main.run.xml" 1694016436 2274 cc6815a974ae84c0c030443d9056fe2f "pdflatex"
+  "Sections/03.tex" 1694631914 899 3cb840fa63806e6d81cf59727ca460ac ""
+  "main.aux" 1694631915 1405 3d899edec1fa86a5939d68a5e8b346bc "pdflatex"
+  "main.bbl" 1694631540 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
+  "main.out" 1694631915 720 999747c1b3611c53dd6c4eff83c60807 "pdflatex"
+  "main.run.xml" 1694631915 2274 cc6815a974ae84c0c030443d9056fe2f "pdflatex"
   "main.tex" 1694010215 1051 61dd46e2c8af5e3950cf2cc42b3d5f86 ""
-  "main.toc" 1694016436 254 621affba908ab9994697d39d5092cd14 "pdflatex"
+  "main.toc" 1694631915 254 621affba908ab9994697d39d5092cd14 "pdflatex"
   "preamble/environments.tex" 1683913509 1038 45234471ed9b79414745c5498b53225f ""
   "preamble/macros.tex" 1693986419 5565 b9347a2cfb04abb1995072223bbf0b2a ""
   "preamble/packages.tex" 1693387888 2909 2781b64a66086403286a668a53e0db31 ""
