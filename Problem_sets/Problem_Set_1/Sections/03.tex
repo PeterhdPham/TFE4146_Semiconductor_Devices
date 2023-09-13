@@ -20,3 +20,235 @@ Where $f(E)$ is the probability for if a given energy state with the energy $E$ 
 
 \textbf{Explain the terms and parameters in the equation above and use it to derive the simplified expression}
 
+\begin{equation*}
+    n_{0}=N_{c} e^{-\left(E_{c}-E_{F}\right) / k_{B} T}
+\end{equation*}
+
+In this equation, the following terms are present:
+
+\begin{enumerate}
+    \item $n_0$ is the total number of electrons in the conduction band per unit volume.
+    \item $E_c$ is the minimum energy required for an electron to be in the conduction band.
+    \item $\int_{E_c}^{\infty}$ is an integral over all the energy states starting from $E_c$ up to infinity. This integral sums up the probability of occupation times the number of available states at that energy.
+    \item $f(E)$ is the Fermi-Dirac distribution function, which gives the probability of occupation of an energy state $E$ at a given temperature. 
+    \item $N(E)$ is the density of available states at a given energy $E$
+\end{enumerate}
+
+In this case we have that
+
+\begin{equation*}
+    N_{C}(E)=4 \pi\left(\frac{2 m^{*}}{h^{2}}\right)^{\frac{3}{2}} \cdot E^{1 / 2}
+\end{equation*}
+
+and
+
+\begin{equation*}
+    f(E)=\frac{1}{1+e^{\left(E-E_{F}\right) / k_{B} T}}
+\end{equation*}
+
+We aim to derive the simplified expression for $ n_0 $:
+
+\begin{equation*}
+n_{0} = N_c e^{-(E_{c} - E_{F}) / k_B T}
+\end{equation*}
+
+To proceed, we insert the expressions for $ f(E) $ and $ N(E) $ into the original equation and simplify:
+
+\begin{align*}
+n_0 &= \int_{E_c}^{\infty} \frac{N_c}{1 + e^{(E - E_F) / (k_B T)}} \, dE \\
+&= N_c \int_{E_c}^{\infty} \frac{1}{1 + e^{(E - E_F) / (k_B T)}} \, dE
+\end{align*}
+
+We perform the integral by making the substitution $ u = (E - E_F) / (k_B T) $ which implies $ dE = k_B T \, du $:
+
+\begin{align*}
+n_0 &= N_c k_B T \int_{(E_c - E_F)/(k_B T)}^{\infty} \frac{1}{1 + e^u} \, du \\
+&\approx N_c k_B T \int_{-\infty}^{0} e^u \, du \\
+&= N_c k_B T [-e^u]_{-\infty}^0 \\
+&= N_c (1) \\
+&= N_c e^{-(E_c - E_F) / (k_B T)}
+\end{align*}
+
+Note: The approximation step where the integral limits change assumes that $ E_c $ is sufficiently greater than $ E_F $ such that the Fermi-Dirac distribution is almost zero beyond $ E_c $.
+
+Thus, we have derived the simplified expression:
+
+\begin{equation*}
+n_0 = N_c e^{-(E_c - E_F) / (k_B T)}
+\end{equation*}
+
+\subsection*{c) Show that the equation above may be written as}
+
+\begin{equation*}
+    n_{0}=n_{i} e^{\left(E_{F}-E_{i}\right) / k_{B} T} 
+\end{equation*}
+
+\textbf{where $n_i$ and $E_i$ are the intrinsic electron concentration and intrinsic fermi-level, respectively.}
+
+First, let's define the intrinsic electron concentration $ n_i $ in terms of $ N_c $ and $ E_c $:
+
+\begin{equation*}
+n_{i} = N_{c} e^{-\left(E_{c} - E_{i}\right) / k_{B} T}
+\end{equation*}
+
+Now, substitute this definition into the original equation for $ n_0 $:
+
+\begin{equation*}
+n_{0} = N_{c} e^{-\left(E_{c} - E_{F}\right) / k_{B} T}
+\end{equation*}
+
+Divide both sides by $ n_i $:
+
+\begin{equation*}
+\frac{n_{0}}{n_{i}} = \frac{N_{c} e^{-\left(E_{c} - E_{F}\right) / k_{B} T}}{N_{c} e^{-\left(E_{c} - E_{i}\right) / k_{B} T}}
+\end{equation*}
+
+Simplifying, we get:
+
+\begin{equation*}
+\frac{n_{0}}{n_{i}} = e^{\left(E_{i} - E_{F}\right) / k_{B} T}
+\end{equation*}
+
+Multiply both sides by $ n_i $:
+
+\begin{equation*}
+n_{0} = n_{i} e^{\left(E_{F} - E_{i}\right) / k_{B} T}
+\end{equation*}
+
+Thus, we have shown that the original equation can be rewritten in the desired form.
+
+
+\subsection*{d) Show that the intrinsic fermi level $E_i$ is in the middle of the bandgap if and only if the effective densities of states $N_c$ and $N_v$ are equal}
+
+We know the expressions for the intrinsic carrier concentrations for electrons \( n_i \) and holes \( p_i \) as:
+
+\begin{equation*}
+n_i = N_c e^{-\left(E_c - E_i\right) / k_B T}
+\end{equation*}
+
+\begin{equation*}
+p_i = N_v e^{-\left(E_i - E_v\right) / k_B T}
+\end{equation*}
+
+For intrinsic semiconductors, \( n_i = p_i \). Setting these equal gives:
+
+\begin{equation*}
+N_c e^{-\left(E_c - E_i\right) / k_B T} = N_v e^{-\left(E_i - E_v\right) / k_B T}
+\end{equation*}
+
+Taking the logarithm of both sides yields:
+
+\begin{equation*}
+-\left(E_c - E_i\right) / k_B T + \ln N_c = -\left(E_i - E_v\right) / k_B T + \ln N_v
+\end{equation*}
+
+Simplifying, we find:
+
+\begin{equation*}
+(E_c - E_i) - (E_i - E_v) = k_B T (\ln N_c - \ln N_v)
+\end{equation*}
+
+Further simplifying:
+
+\begin{equation*}
+E_c - E_v = k_B T \ln\left(\frac{N_c}{N_v}\right)
+\end{equation*}
+
+For \( E_i \) to be in the middle of the bandgap, \( E_c - E_i = E_i - E_v \) or \( E_i = (E_c + E_v)/2 \).
+
+This condition is met if \( \ln(N_c/N_v) = 0 \) or \( N_c = N_v \).
+
+Thus, \( E_i \) is in the middle of the bandgap if and only if \( N_c = N_v \).
+
+\subsection*{e) Use}
+
+\begin{equation*}
+    \begin{array}{l}N_{C}=2\left(\frac{2 \pi m_{n}^{*} k_{B} T}{h^{2}}\right)^{\frac{3}{2}} \\ N_{V}=2\left(\frac{2 \pi m_{p}^{*} k_{B} T}{h^{2}}\right)^{\frac{3}{2}}\end{array} 
+\end{equation*}
+
+\textbf{to show that the intrinsic Fermi level $E_i$ is positioned below the middle of the bandgap by}
+
+\begin{equation*}
+    \Delta E=k_{B} T \ln \left(\frac{m_{n}^{*}}{m_{p}^{*}}\right)^{\frac{3}{4}}
+\end{equation*}
+
+We previously derived that:
+
+\begin{equation*}
+E_c - E_v = k_B T \ln\left(\frac{N_c}{N_v}\right)
+\end{equation*}
+
+Substitute the expressions for \( N_C \) and \( N_V \):
+
+\begin{equation*}
+E_c - E_v = k_B T \ln\left(\frac{2\left(\frac{2 \pi m_{n}^{*} k_B T}{h^2}\right)^{\frac{3}{2}}}{2\left(\frac{2 \pi m_{p}^{*} k_B T}{h^2}\right)^{\frac{3}{2}}}\right)
+\end{equation*}
+
+Simplifying, we get:
+
+\begin{equation*}
+E_c - E_v = k_B T \ln\left(\left(\frac{m_{n}^{*}}{m_{p}^{*}}\right)^{\frac{3}{2}}\right)
+\end{equation*}
+
+\begin{equation*}
+E_c - E_v = \frac{3}{2} k_B T \ln\left(\frac{m_{n}^{*}}{m_{p}^{*}}\right)
+\end{equation*}
+
+For \( E_i \) to be at the middle of the bandgap, we would have:
+
+\begin{equation*}
+E_i = \frac{E_c + E_v}{2}
+\end{equation*}
+
+Due to the effective mass difference, \( E_i \) will actually be shifted by \( \Delta E \) below the middle:
+
+\begin{equation*}
+E_i = \frac{E_c + E_v}{2} - \Delta E
+\end{equation*}
+
+Where \( \Delta E \) is:
+
+\begin{equation*}
+\Delta E = \frac{1}{2} \times \frac{3}{2} k_B T \ln\left(\frac{m_{n}^{*}}{m_{p}^{*}}\right)
+\end{equation*}
+
+\begin{equation*}
+\Delta E = k_B T \ln\left(\frac{m_{n}^{*}}{m_{p}^{*}}\right)^{\frac{3}{4}}
+\end{equation*}
+
+Thus, we have shown that \( \Delta E \) is the amount by which the intrinsic Fermi level is positioned below the middle of the bandgap.
+
+\subsection*{f) Calculate this deviation (from the midgap energy) for Ge and GaAs.}
+
+Effective masses for Ge: $m_n^* = 0.56m_0;m_p^*=0.29m_0$\\
+Effective masses for GaAs: $m_n^* = 0.067m_0;m_p^*=0.48m_0$
+
+To calculate the deviation \( \Delta E \) for Ge and GaAs, we use the formula:
+
+\begin{equation*}
+\Delta E = k_B T \ln\left(\frac{m_{n}^{*}}{m_{p}^{*}}\right)^{\frac{3}{4}}
+\end{equation*}
+
+Here \( k_B = 8.617 \times 10^{-5} \, \text{eV/K} \) is the Boltzmann constant, and we assume room temperature \( T = 300 \, \text{K} \).
+
+\textbf{For Ge:}
+
+Effective masses for Ge are \( m_n^* = 0.56m_0 \) and \( m_p^* = 0.29m_0 \).
+
+\begin{equation*}
+\Delta E_{\text{Ge}} = 8.617 \times 10^{-5} \times 300 \ln\left(\frac{0.56}{0.29}\right)^{\frac{3}{4}}
+\end{equation*}
+
+After calculations, we find \( \Delta E_{\text{Ge}} \approx 0.010 \, \text{eV} \).
+
+\textbf{For GaAs:}
+
+Effective masses for GaAs are \( m_n^* = 0.067m_0 \) and \( m_p^* = 0.48m_0 \).
+
+\begin{equation*}
+\Delta E_{\text{GaAs}} = 8.617 \times 10^{-5} \times 300 \ln\left(\frac{0.067}{0.48}\right)^{\frac{3}{4}}
+\end{equation*}
+
+After calculations, we find \( \Delta E_{\text{GaAs}} \approx -0.029 \, \text{eV} \).
+
+Thus, we have calculated the deviations \( \Delta E \) from the midgap energy for Ge and GaAs.
