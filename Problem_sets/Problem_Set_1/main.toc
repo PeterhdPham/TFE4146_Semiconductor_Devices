@@ -1,0 +1,4 @@
+\contentsline {section}{Part 1: Schrödingers Equation and the Kronig-Penney Model}{3}{section*.2}%
+\contentsline {section}{Part 2: Effective Mass}{7}{section*.7}%
+\contentsline {section}{Part 3: Carrier Concentrations}{8}{section*.10}%
+\contentsfinish 

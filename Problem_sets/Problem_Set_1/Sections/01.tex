@@ -1,0 +1,89 @@
+\section{Part 1: Schrödingers Equation and the Kronig-Penney Model}
+
+\subsection*{Problem 1}
+
+\subsubsection*{(a) Start from the general, time-dependent Schrödinger equation}
+
+\begin{equation*}
+    i \hbar \frac{\partial \psi(x, t)}{\partial t}=\frac{-\hbar^{2}}{2 m} \frac{\partial^{2} \psi(x, t)}{\partial x^{2}}+V(x) \psi(x, t)
+\end{equation*}
+
+We assume that we can the solutions can be separated into spatial and time-dependent parts. Therefore we kan assume that $\Psi(\mathbf{x},t) = \psi(\mathbf{x})T(t)$, where $\psi(\mathbf{x})$ is the spatial part, and $T(t)=e^(-\frac{iEt}{\hbar})$ is the time-dependent part.
+
+By replacing this in the Schrödinger equation
+
+\begin{equation*}
+    i\hbar \psi(\mathbf{x})\frac{dT}{dt} = -\frac{\hbar^2}{2m}T(t)\nabla^2\psi(\mathbf{x}) + V(\mathbf{x})\psi(\mathbf{x})T(t)
+\end{equation*}
+
+Divide both part with $\psi(\mathbf{x})T(t)$ to separate the variables:
+
+\begin{equation*}
+    i\hbar\frac{1}{T(t)}\frac{dT}{dt} = -\frac{\hbar^2}{2m}\frac{1}{\psi(\mathbf{x})}\nabla^2\psi(\mathbf{x}) + V(\mathbf{x})
+\end{equation*}
+
+The right side of this equation only depend on spatial variables, while the left side are only dependent og time. Therefore both side must be constant to sattisfy the equation for all $\mathbf{x}$ and $t$. we call this konstant for energy $E$, which gives us two equations:
+    
+\begin{equation*}
+    i\hbar\frac{1}{T(t)}\frac{dT}{dt} = E
+\end{equation*}
+    
+\begin{equation*}
+    -\frac{\hbar^2}{2m}\frac{1}{\psi(\mathbf{x})}\nabla^2\psi(\mathbf{x}) + V(\mathbf{x}) = E
+\end{equation*}
+
+After reorganising the other equation we get the time independent  Schrödinger equartion:
+    
+\begin{equation*}
+    E \psi(\mathbf{x})=-\frac{\hbar^{2}}{2 m} \nabla^2 \psi(\mathbf{x})+V(\mathbf{x})\psi(\mathbf{x})
+\end{equation*}
+
+\subsubsection*{b) Consider the infinite quantum well, described by the potential}
+
+\begin{equation*}
+    V(x)=\left\{\begin{array}{ll}\infty & x \leq 0 \\ 0 & 0<x<L \\ \infty & x \geq 0\end{array}\right. 
+\end{equation*}
+
+This is a infinite quantum well in one dimension, therefore the particle can only move along the x-axis where $0<x<L$. Since the potential is infinitely high outside the well, the wave function must me zero outside the well. Inside the well the wave function and its second derivative must be continlus. The wave equation only can exist inside the well, this implies that the wave equation is also normalizable.
+
+In the area $0<x<L$, the potential energy $V(x)=0$, this gives us:
+
+\begin{equation*}
+    \frac{\partial^2}{\partial x^2}\phi = -\frac{2m}{\hbar ^2} E\phi
+\end{equation*}
+
+We copy Faststoff project part one:
+
+\begin{equation*}
+    k^2=\frac{2mE}{\hbar ^2}
+\end{equation*}
+
+\begin{equation*}
+    \frac{\partial^2}{\partial x^2}\phi =-k^2 \phi
+\end{equation*}
+
+The general solution must be:E
+
+\begin{equation*}
+    \phi(x)=A \sin (kx) + B \cos (kx)
+\end{equation*}
+
+For the function to be normalizable $B$ must equal to $0$. This does also imply that $\phi(L)=A \sin (kL)=0$
+
+This gives us the equation
+\begin{equation*}
+    \phi(x)=\sqrt{\frac{2}{L}} \sin (\frac{n\pi x}{L})
+\end{equation*}
+
+where the integral over the function from $0$ to $L = 1$
+
+\importimage{1b}
+
+\subsubsection*{(c) Kronig-Penney Model}
+
+By solving the Kronig-Penney model, we can calculate the dispersion relation by finding the energy levels for diffrent values of the wavevector k. This gives us a function $E(k)$ that describes how the energy of a electron changes with the wave equation mentioned in the previous problem.
+
+\importimage{1d1}
+
+\importimage{1d}
+
