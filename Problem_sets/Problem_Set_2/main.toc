@@ -1,0 +1,4 @@
+\contentsline {section}{Problem 1 - Conductivity}{3}{section*.2}%
+\contentsline {section}{Part 2: Effective Mass}{4}{section*.3}%
+\contentsline {section}{Part 3: Carrier Concentrations}{5}{section*.4}%
+\contentsfinish 
