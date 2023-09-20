@@ -1,17 +1,17 @@
 \section{Problem 1 - Conductivity}
-
-The conductivity of a semiconductor will depend on the doping concentration. Express the conductivity $\sigma$ as a function of
+\subsection*{a)}
+\textbf{The conductivity of a semiconductor will depend on the doping concentration. Express the conductivity $\sigma$ as a function of}
 
 \begin{equation*}
      \tilde{n}=\frac{n_{0}}{n_{i}} 
 \end{equation*}
 
-i.e. the electron concentration normalized to the intrinsic value.
+\textbf{where $n_i$ is the intrinsic electron concentration, $n_0$ is the elecron concentration at thermal equilibrium.}
 
 The general equation for conductivity due to electron is 
 
 \begin{equation*}
-    \sigma=q n_0 \mu_{n} 
+    \sigma=q n_0 \mu_{n}
 \end{equation*}
 
 from the given function we have that 
@@ -26,16 +26,110 @@ This gives us
     \sigma=q (\tilde{n}\cdot n_i) \mu_{n} 
 \end{equation*}
 
+where $q$ is the charge of an electron, $\tilde{n}$ is the electron concentration normalized to the intrinsic value $n_i$ the intrinsic carrier concentration, $\mu_{n}$ is the electron mobility.
+
+\textbf{Use the values of $\mu_n$ and $\mu_p$ for Si and plot the function for $\tilde{n} \in [0, 10]$. Give an intuitive explanation for the shape of the function. Do not consider the variations in the mobility with the doping concentration.}
+
+\importimage{1a.png}
+
+We can se that the relation between the conductivity $\sigma$ and the  electron concentration normalized to the intrinsic value is linear. It makes sense as the the conductivity increases when you n-dope the Si
+
+\subsection*{b)}
+\textbf{Show that the minimum conductivity is given by}
+
 \begin{equation*}
-    \mu_{n} \equiv \frac{q \tau}{m_{n}^{*}}
+    \sigma_{\min }=2 q n_{i} \sqrt{\mu_{n} \mu_{p}}
 \end{equation*}
 
+The current density can be written in terms of mobility as
 
 \begin{equation*}
-    \Rightarrow \sigma=(\tilde{n}\cdot n_i) \frac{q^2\tau}{m_{n}^{*}}
+    J_{x}=q n \mu_{n} \mathscr{E}_{x} 
 \end{equation*}
 
-where $q$ is the charge of an electron, $\tilde{n}$ is the electron concentration normalized to the intrinsic value $n_i$ the intrinsic carrier concentration, $\mu_{n}$ is the electron mobility $\tau is $
+If both electrons and holes participate, then we must modify the equation to
 
+\begin{equation*}
+    J_{x}=q\left(n \mu_{n}+p \mu_{p}\right) \mathscr{E}_{x}=\sigma \mathscr{E}_{x}
+\end{equation*}
 
+by combining this with the product of electron and hole concentration and assuming that the conductivity is at minimum when $n_0=p_0=n_i$.
 
+\begin{equation*}
+    n_0 p_o=n^2_i
+\end{equation*}
+
+\begin{equation*}
+    p_0 = \frac{n_i^2}{n_0}
+\end{equation*}
+
+Substitute this into $ \sigma $:
+
+\begin{equation*}
+    \sigma = q(n_0 \mu_n + \frac{n_i^2}{n_0} \mu_p)
+\end{equation*}
+
+for $\sigma$ to be minimized, $\frac{d\sigma}{dn_0}=0$
+
+\begin{equation*}
+    \frac{d\sigma}{dn_0} = q(\mu_n - \frac{n_i^2 \mu_p}{n_0^2})=0
+\end{equation*}
+
+\begin{equation*}
+    \mu_n = \frac{n_i^2 \mu_p}{n_0^2}
+\end{equation*}
+\begin{equation*}
+    n_0^2 = n_i^2 \frac{\mu_p}{\mu_n}
+\end{equation*}
+\begin{equation*}
+    n_0 = n_i \sqrt{\frac{\mu_p}{\mu_n}}
+\end{equation*}
+
+\begin{equation*}
+n_0 = n_i \sqrt{\frac{\mu_p}{\mu_n}}
+\end{equation*}
+\begin{equation*}
+p_0 = n_i \sqrt{\frac{\mu_n}{\mu_p}}
+\end{equation*}
+We substitute these values into the expression for $ \sigma $:
+\begin{equation*}
+\sigma = q(n_0 \mu_n + p_0 \mu_p)
+\end{equation*}
+\begin{equation*}
+\sigma = q(n_i \sqrt{\frac{\mu_p}{\mu_n}} \mu_n + n_i \sqrt{\frac{\mu_n}{\mu_p}} \mu_p)
+\end{equation*}
+\begin{equation*}
+\sigma = q n_i (\sqrt{\mu_n \mu_p} + \sqrt{\mu_n \mu_p})
+\end{equation*}
+\begin{equation*}
+\sigma_{\text{min}} = 2 q n_i \sqrt{\mu_n \mu_p}
+\end{equation*}
+Hence, the minimum conductivity $ \sigma_{\text{min}} $ is given by $ 2 q n_i \sqrt{\mu_n \mu_p} $ when $ n_0 = n_i \sqrt{\frac{\mu_p}{\mu_n}} $.
+
+The intrinsic conductivity $\sigma_i$ for Si can be calculated using the equation:
+
+\begin{equation*}
+    \sigma_i = qn_i(\mu_n+\mu_p)
+\end{equation*}
+
+for silicon:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cc}
+    \hline
+    Parameter & Value \\
+    \hline
+    \( \mu_n \) (Electron mobility in \(\text{cm}^2/\text{V-s}\)) & 1350 \\
+    \( \mu_p \) (Hole mobility in \(\text{cm}^2/\text{V-s}\)) & 450 \\
+    \( n_i \) (Intrinsic carrier concentration in \(\text{cm}^{-3}\)) & \(1.5 \times 10^{10}\) \\
+    \( q \) (Elementary charge in C) & \(1.6 \times 10^{-19}\) \\
+    \hline
+    \( \sigma_i \) (Intrinsic conductivity in \(\text{S/cm}\)) & \(4.32 \times 10^{-2}\) \\
+    $\sigma_{min}$(Minimum conductivity in \(\text{S/cm}\)) & $3.74 \times 10^{-2}$\\
+    \hline
+    \end{tabular}
+    \caption{Typical values for silicon and calculated intrinsic conductivity}
+\end{table}
+
+when comparing the two conductivities we can se that extrinsic doesn't necessary mean that we get a more conductivity.  

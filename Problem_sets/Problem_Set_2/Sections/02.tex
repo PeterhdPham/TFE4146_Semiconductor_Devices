@@ -1,1 +1,42 @@
-\section{Part 2: Effective Mass}
+\section{Problem 2 - The Hall Experiment}
+
+\textbf{Hall measurements are made on a p-type semiconductor bar \( 500 \mu \mathrm{m} \) wide and \( 20 \mu \mathrm{m} \) thick. The Hall contacts \( A \) and \( B \) are displaced \( 2 \mu \mathrm{m} \) with respect to each other in the direction of a current flow of \( 3 \mathrm{~mA} \). The voltage between \( A \) and \( B \) with a magnetic field of \( 10 \mathrm{kG}\left(1 \mathrm{kG}=10^{-5}\right. \) \( \mathrm{Wb} / \mathrm{cm}^{2} \) ) pointing out of the plane of the sample is \( 3.2 \mathrm{mV} \). When the magnetic field direction is reversed, the voltage changes to \( -2.8 \mathrm{mV} \).}
+
+
+\subsection*{a) Draw a figure that illustrate the setup and includes all the given information. Make sure
+you get the correct orientation of the contacts A and B.}
+\importimage{2a2.jpg}
+\importimage{2a.jpg}
+
+\subsection*{b) Calculate the hole concentration and mobility.}
+
+we can get the hole concentration from the equation
+
+\begin{equation*}
+    p_0=\frac{I_x\mathscr{B}_{z} }{qtV_{AB}}
+\end{equation*}
+
+\begin{equation*}
+    p_0=\frac{0.003\times10^{-4} }{1.6\times 10^{-19}\times 2\times 10^{-5} 0.0031}=3.02\times10^{19} cm^{-3}
+\end{equation*}
+
+the resistivity is given by
+
+\begin{equation*}
+    \rho=\frac{\frac{V_{AB}}{I_x}}{\frac{L}{wt}}
+\end{equation*}
+
+\begin{equation*}
+    \rho=\frac{\frac{0.0031}{0.003}}{\frac{2\times 10^{-6}}{2\times 10^{-5}\times 5\times10^{-4}}}=0.00516
+    \Omega m
+\end{equation*}
+
+the mobility is given by 
+
+\begin{equation*}
+    \mu_n=\frac{1}{\rho q p_o}
+\end{equation*}
+
+\begin{equation*}
+    \mu_n=\frac{1}{0.00516\times 1.6\times 10^{-19}\times 3.02\times10^{19} }=40.11\frac{cm^2}{Vs}
+\end{equation*}
