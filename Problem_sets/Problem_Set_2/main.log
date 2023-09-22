@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  20 SEP 2023 23:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  22 SEP 2023 12:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1491,26 +1491,32 @@ File: ./Sections//../figures/2a.jpg Graphic file (type jpg)
 <use ./Sections//../figures/2a.jpg>
 Package pdftex.def Info: ./Sections//../figures/2a.jpg  used on input line 9.
 (pdftex.def)             Requested size: 328.82706pt x 339.12093pt.
- [7 <./Sections//../figures/2a2.jpg>] [8 <./Sections//../figures/2a.jpg>]) (./Sections/03.tex [9]) [10] (./main.aux)
+ [7 <./Sections//../figures/2a2.jpg>] [8 <./Sections//../figures/2a.jpg>]) (./Sections/03.tex [9]
+<./Sections//../figures/material_in_intimate_contact.png, id=107, 581.17125pt x 326.21875pt>
+File: ./Sections//../figures/material_in_intimate_contact.png Graphic file (type png)
+<use ./Sections//../figures/material_in_intimate_contact.png>
+Package pdftex.def Info: ./Sections//../figures/material_in_intimate_contact.png  used on input line 3.
+(pdftex.def)             Requested size: 328.82706pt x 184.57774pt.
+ [10 <./Sections//../figures/material_in_intimate_contact.png>]) [11] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 155E4E73E36DEA362B448B3B96CB5FBB;590.
+(rerunfilecheck)             Checksum: 5C7336619702E5B9213A18D1CD88A463;738.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58423 strings out of 478287
- 1286590 string characters out of 5849289
- 2088476 words of memory out of 5000000
- 75411 multiletter control sequences out of 15000+600000
- 536636 words of font info for 178 fonts, out of 8000000 for 9000
+ 58444 strings out of 478287
+ 1287246 string characters out of 5849289
+ 2088496 words of memory out of 5000000
+ 75420 multiletter control sequences out of 15000+600000
+ 536884 words of font info for 181 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,12n,100p,1077b,848s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on main.pdf (10 pages, 252485 bytes).
+Output written on main.pdf (11 pages, 274159 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
- 45204 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 169 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 45209 words of extra memory for PDF output out of 51595 (max. 10000000)
 

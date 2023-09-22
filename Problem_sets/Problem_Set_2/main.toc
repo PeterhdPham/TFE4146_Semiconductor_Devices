@@ -1,4 +1,4 @@
 \contentsline {section}{Problem 1 - Conductivity}{3}{section*.2}%
 \contentsline {section}{Problem 2 - The Hall Experiment}{7}{section*.5}%
-\contentsline {section}{Part 3: Carrier Concentrations}{10}{section*.8}%
+\contentsline {section}{Problem 3 - Invariance of the Fermi Level at Equilibrium}{10}{section*.8}%
 \contentsfinish 

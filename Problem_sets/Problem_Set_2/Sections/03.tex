@@ -1,1 +1,47 @@
-\section{Part 3: Carrier Concentrations}
+\section{Problem 3 - Invariance of the Fermi Level at Equilibrium}
+\textbf{Consider the figure below showing 2 materials in contact at equilibrium. \( N_{1}(E) \) and \( N_{2}(E) \) denotes the density of states in material 1 and 2 and \( f(E) \) is the probability of a state being filled at energy \( E \) in each material.Let \( r_{12} \) and \( r_{21} \) denote the rate of transfer of electrons from material 1 to material 2 and from material 2 to material 1 , respectively.}
+\importimagewcaption{material_in_intimate_contact.png}{Two materials in intimate contact at equilibrium.}
+
+\subsection*{a) Explain in your own words why}
+
+\[r_{12} \propto N_{1}(E) f_{1}(E) \cdot N_{2}(E)\left[1-f_{2}(E)\right]\]\textbf{and}\[r_{21} \propto N_{2}(E) f_{2}(E) \cdot N_{1}(E)\left[1-f_{1}(E)\right] .\]
+
+We can start by explaining the symbols
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccp{7cm}}
+    \hline
+    Symbol & Notation & Description \\
+    \hline
+    \(r_{12}\) & Rate & rate of transition from state 1 to state 2. \\
+    \(r_{21}\) & Rate & rate of transition from state 2 to state 1. \\
+    \(N_{1}(E)\) & Density of States & density of states at energy \(E\) for state 1. \\
+    \(N_{2}(E)\) & Density of States & density of states at energy \(E\) for state 2. \\
+    \(f_{1}(E)\) & Fermi–Dirac distribution & probability that a given energy state in state 1 is occupied by an electron. \\
+    \(f_{2}(E)\) & Fermi–Dirac distribution & probability that a given energy state in state 2 is occupied by an electron. \\
+    \(E\) & Energy & energy of the system. \\
+    \hline
+    \end{tabular}
+    \caption{Symbols, Notation, and Descriptions.}
+    \end{table}
+    
+    The equation states that at a given Energy, the rate of transfer for electrons from 1 to 2  is proportional to the number of filled states a E in material 1 times the number of empty states at E in material 2 and vice versa. This is because we assume that there is no current, and therefore no charge transport. Electrons can't appear from thin air, the does also mean that the rate of transfer for electrons must be balanced.
+
+    \subsection*{b) In thermal equilibrium, there is, by definition, no net current, no net transfer of electrons
+    and no net transfer of energy. Use this fact and the equations above to show that the
+    fermi level must be constant throughout materials in intimate contact.}
+
+    when in thermal equilibrium these must be equal
+
+    \begin{equation*}
+        N_{1}(E) f_{1}(E) \cdot N_{2}(E)\left[1-f_{2}(E)\right]=N_{2}(E) f_{2}(E) \cdot N_{1}(E)\left[1-f_{1}(E)\right] 
+    \end{equation*}
+
+    this results In
+
+    \begin{equation*}
+        f_1(E)=f_2(E)
+    \end{equation*}
+
+    Therefore we can say that the fermienergy $E_{F1}=E_{F2}$
