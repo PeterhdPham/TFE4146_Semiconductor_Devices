@@ -1,0 +1,81 @@
+\section{Problem 3 - The Haynes-Shockley Experiment}
+\textbf{Figure \ref{fig:Haynes-Shockley_experiment.png} shows the experimental setup for the Haynes-Shockley experiment. The length of the sample is \( L_{0}=75 \mathrm{~mm} \) and the points (1) and (2) are separated by \( L=30 \mathrm{~mm} \). The supplied voltages are \( E_{0}=100 \mathrm{~V} \) and \( E_{2}=15 \mathrm{~V} \) and the resistors have the values \( R_{1}=10 \mathrm{k} \Omega \) and \( R_{2}=7 \mathrm{k} \Omega \) respectively.}
+
+\importimagewcaption{Haynes-Shockley_experiment.png}{The setup for the Haynes-Shockley experiment}
+
+\subsection*{a) Explain how we can use this experiment to determine the mobility and diffusion coefficient for holes in the n-type semiconductor.}
+
+The basic principles of the Haynes-Shockley experiment are:
+
+\begin{enumerate}
+    \item A pulse of holes is created in a n-type bar that contain an electric field.
+    \item As the pulse drifts in the field and spreads out by diffusion, the excess hole concentration is monitored at som point down the bar.
+    \item The time required for the holes to drift a given distance in the field gives a measure of the mobility.
+    \item The spreading of the pulse during a given time is used to calculate the diffusion coefficient.
+\end{enumerate}
+
+\importimagewcaption{Drift'ndiffusion.png}{Drift and diffusion of a hole pulse in an n-­type bar: (a) sample geometry; (b) position and shape of the pulse for several times during its drift down the bar.}
+
+\subsection*{b) A very short pulse of holes is injected into the sample at point (1) at time \( t=0 \). Because of the applied voltage \( E_{0} \), the pulse of excess holes will be swept from (1) to (2). The voltage signal seen on the oscilloscope is shown in figure \ref{fig:voltage_signal.png} . The signal peak arrives after \( t_{d}=200 \mathrm{~ns} \).Calculate the mobility \( \mu_{p} \).}
+
+\importimagewcaption{voltage_signal.png}{ The voltage signal seen on the oscilloscope}
+
+The mobility $\mu$ is given by
+
+\begin{equation*}
+    \mu_p=\frac{V_d}{\mathscr{E}}
+\end{equation*}
+
+where $V_d$ is the drift velocity given by
+
+\begin{equation*}
+    V_d=\frac{L}{t_d}=1.5\cdot10^{5}\frac{m}{s}
+\end{equation*}
+
+the $\mathscr{E}$-field is given by
+
+\begin{equation*}
+    \mathscr{E}=\frac{E_0}{L_0}=\frac{100}{0.075}=1333.3\frac{V}{m}
+\end{equation*}
+
+This gives us
+
+\begin{align*}
+    \mu_p&=\frac{1.5\cdot10^{5}}{1333.3}\\
+    \mu_p&=112.5 \frac{m^2}{V\cdot s}
+\end{align*}
+
+\subsection*{c) Assume \( t_{d}<<\tau_{p} \) such that recombination of charge carriers can be ignored. Show that the diffusion coefficient is given by}
+
+\[D_{p}=\frac{(\Delta t L)^{2}}{16 t_{d}^{3}},\]
+\textbf{and calculate \( D_{p} \) for this particular sample.Hint: Ignoring recombination, the diffusion equation, which describes the broadening of the pulse, reduces to}
+
+\[\frac{\partial \delta p}{\partial t}=D_{p} \frac{\partial^{2} \delta p}{\partial x^{2}}\]
+
+\textbf{which has the solution}
+\[\delta p(x, t)=\frac{\Delta P}{2 \sqrt{\pi D_{p} t}} e^{\frac{-x^{2}}{4 D_{p} t}}\]
+
+As the pulse drifts in the $\mathscr{E}$ field it aslo spreads out by diffusion. By examin the case of diffusion of a pulse without drift, neglecting recombination, the equation which the hole distribution must satisfy is the time-dependent diffusion equation
+
+\begin{equation*}
+    \frac{\partial \delta p}{\partial t}=D_{p} \frac{\partial^{2} \delta p}{\partial x^{2}}-\frac{\delta p}{\tau_{n}} 
+\end{equation*}
+
+For the case of negligible recombination, we can rewrite the diffusion equation as 
+
+
+\begin{equation*}
+    \frac{\partial \delta p}{\partial t}=D_{p} \frac{\partial^{2} \delta p}{\partial x^{2}}
+\end{equation*}
+
+The function which satisfies this qeuation is called a \textit{gaussioan distribution},
+
+\begin{equation*}
+    \delta p(x, t)=\left[\frac{\Delta P}{2 \sqrt{\pi D_{p} t}}\right] e^{-x^{2} / 4 D_{p} t}
+\end{equation*}
+
+where $\Delta P$ is the number of holes per unit area created over a negligibly small distance at $t=0$. The factor in brackets indicates that the peak value of the pulse at ($x=0$) decreases with time. We can redefine the peak value of the pulse as $\widehat{\delta p}$ at any given time, we can use the equationa bove too calculate $D_p$ at some point x. The most convenient choice is $\frac{\Delta x}{2}$ as this is where $\Delta p$ is down by $\frac{1}{e}$ of its peak value. There fore we can write
+
+\begin{equation*}
+    \begin{aligned} e^{-1} \widehat{\delta p} & =\widehat{\delta p} e^{-(\Delta x / 2)^{2} / 4 D_{p} t_{d}} \\ D_{p} & =\frac{(\Delta x)^{2}}{16 t_{d}}\end{aligned}
+\end{equation*}

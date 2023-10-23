@@ -1,0 +1,77 @@
+\section{Problem 1 - Zener Breakdown}
+
+\textbf{Consider a reversed biased p-n junction where the doping concentrations are $N_A=N_D=$ $4 \cdot 10^{18} \mathrm{~cm}^{-3}$. Let $V_r$ denote the reverse bias voltage, $V_j=V_0+V_r$ the total voltage difference across the p-n junction and let $W$ denote the width of the depletion region.}
+\subsection*{a) Explain the difference between avalanche and Zener breakdown.}
+We start by explaining them sepparately, and then comparing the two phenomens:
+
+\begin{itemize}
+    \item \textbf{Zener breakdown:}
+    \subitem When a heavily doped junction is reverse biased, the bands become crossed at a relative low voltage. If the barrier separating these two band is narrow, then tunneling of electrons can occour as shown in figure \ref{fig:The_Zener_effect.png} (b). The basic requirements for tunneling current are a large number of electrons separated from a large number of empty states by a narrow barrier of finite height
+    \subitem \importimagewcaption{The_Zener_effect.png}{The Zener effect:(a) heavily doped junction at equilibrium; (b) reverse with electron tunneling from p to n; (c) $I-V$ characteristic.}
+    \item \textbf{Avalanche breakdown:}
+    \subitem When a junction is lightly doped, the electron tinneling is negligible. Therefore the breakdown mechanism involves the \textit{impact ionization}. The normal lattice-scattering events can result in the creation of electron-hole pairs if the carrier being scattered has sufficient energy. This might occour when electric field $\mathscr{E}$ in the transition region is large, resulting in an electron accelerating to a high kinetic energy that leads to ionizing collision with the lattice as seen in figure \ref{fig:multiple_collision.png}.
+    \subitem \importtwoimages{Ionizing_collision.png}{a single ionizing collision by an incoming electron in the depletion region of the junction; }{multiple_collision.png}{primary, secondary, and tertiary collisions.}{Electron-hole pairs created by impact ionization}
+    \item Diffrence between avalanche and Zener breakdown:
+    \subitem \begin{table}[H]
+        \centering
+        \begin{tabularx}{\textwidth}{|X|X|}
+            \hline
+            \textbf{Avalanche Breakdown} & \textbf{Zener Breakdown} \\
+            \hline
+            Occurs in lightly doped junctions. & Occurs in heavily doped junctions. \\
+            \hline
+            Initiated by carriers acquiring enough energy from the electric field to ionize other carriers, leading to a chain reaction and a rapid increase in current. & Caused by the quantum tunneling of carriers. \\
+            \hline
+            Non-destructive in nature unless the junction undergoes prolonged high current. & Typically occurs at a well-defined voltage and is utilized in Zener diodes for voltage regulation. \\
+            \hline
+            Breakdown voltage increases with an increase in temperature (positive temperature coefficient). & Breakdown voltage decreases with an increase in temperature (negative temperature coefficient). \\
+            \hline
+        \end{tabularx}
+        \caption{Differences between Avalanche and Zener Breakdown}
+        \label{tab:differences}
+    \end{table}
+\end{itemize}
+
+
+
+\subsection*{b) Assume the critical field strength for Zener breakdown is $\mathrm{E}_B=10^6 \mathrm{~V} \mathrm{~cm}^{-1}$. Find the reverse bias voltage $V_r$ for which Zener breakdown occurs, i.e. when the maximum value of the electric field reaches $\mathrm{E}_B$.}
+\textbf{Given:\\
+Relative permittivity in $\mathrm{Si}: \epsilon_r=11.8$\\
+Permittivity in vacuum: $\epsilon_0=8.85 \cdot 10^{-14} \mathrm{~F} \mathrm{~cm}^{-1}$\\
+Intrinsic charge carrier density in $\mathrm{Si}: n_i=1.5 \cdot 10^{10} \mathrm{~cm}^{-3}$.}
+
+As the width of the depletion region given by 
+
+$$
+W=\left[\frac{2 \epsilon\left(V_0-V\right)}{q}\left(\frac{N_a+N_d}{N_a N_d}\right)\right]^{1 / 2} \quad \text { (with bias)}
+$$
+
+where $V=-V_r$ and $V_0$ is given by 
+$$
+V_0=\frac{k T}{q} \ln \frac{N_a N_d}{n_i^2}
+$$
+This gives us
+$$
+V_0=\frac{1.38 \cdot 10^{-23} \cdot300}{1.6\cdot 10^{-19}} \ln \frac{\left(4\cdot10^{18}\right)^2}{\left(1.5 \cdot 10^{10}\right)^2}= 1.00V
+$$
+The electric field across the depletion region is 
+
+$$
+\mathscr{E}=\frac{V_j}{W}
+$$
+
+At zener breakdown, $\mathscr{E}=\mathscr{E}_B$
+
+This gives us 
+
+\begin{align*}
+    \frac{V_0+V_r}{\left[\frac{2 \epsilon\left(V_0-V\right)}{q}\left(\frac{N_a+N_d}{N_a N_d}\right)\right]^{1 / 2} }&=\mathscr{E}_B\\
+    \frac{\left(V_0+V_r\right)^2}{\frac{2 \epsilon\left(V_0+V_r\right)}{q}\left(\frac{N_a+N_d}{N_a N_d}\right) }&=\mathscr{E}_B^2\\
+    V_0+V_r&=\mathscr{E}_B^2\frac{2 \epsilon}{q}\left(\frac{N_a+N_d}{N_a N_d}\right)\\
+    V_r&=\mathscr{E}_B^2\frac{2 \epsilon}{q}\left(\frac{N_a+N_d}{N_a N_d}\right) -V_0\\
+    V_r&=\left(10^6\right)^2\frac{2 \cdot 11.8\cdot 8.85 \cdot 10^{-14}}{1.6\cdot 10^{-19}}\left(\frac{2\cdot\left(4 \cdot 10^{18}\right)}{\left(4 \cdot 10^{18}\right)^2}\right) -1\\
+    V_r&=5.53V
+\end{align*}
+
+
+

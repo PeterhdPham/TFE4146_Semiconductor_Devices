@@ -1,0 +1,53 @@
+\section{Problem 5 - Diffusion}
+Consider figure \ref{fig:Drift'ndiffusion.png} showing a steady state hole distribution \( p(x) \), which is the result of an injection of holes at \( x=0 \). Assume the length of the bar is infinite and let the excess hole concentration at \( x=0 \) be denoted by \( \delta p(0)=\Delta p \).
+
+\importimagewcaption{injection_of_holes.png}{Injection of holes at $x = 0$, giving rise to a steady state hole distribution $p(x)$. Figure from Streetman.}
+
+\subsection*{a) State the steady state diffusion equation for holes and find the solution under the given assumptions.}
+
+The steady state diffusion equartions for holes is
+
+\begin{equation*}
+    \frac{d^{2} \delta p}{d x^{2}}=\frac{\delta p}{D_{p} \tau_{p}} \equiv \frac{\delta p}{L_{p}^{2}} 
+\end{equation*}
+
+where $L_p\equiv \sqrt{D_p\tau_p}$ is called the hole \textit{diffusion lenght}. As we have steady state, we no longer need partial derivatives.  The solution to this equation has the form
+
+
+\begin{equation*}
+    \delta p(x) = C_1 e^{\frac{x}{L_p}}+ C_2 e^{-\frac{x}{L_p}}
+\end{equation*}
+
+as we expect the distrobution of excess holes to decay to zero for large values of x because of recombination, and $\delta p = \Delta p$ at $x=0$ we end up with
+\begin{equation*}
+    \delta p(x) = \Delta p e^{-\frac{x}{L_p}}
+\end{equation*}
+
+\subsection*{b) Calculate the probability that a hole injected at $x = 0$ will recombine in the infinitesimally small interval between $x$ and $x + dx$.}
+
+The probability that a hole injected at $x = 0$ survives to $x$ without recombination is $\frac{\delta p(x)}{\Delta p}=e^{-\frac{x}{Lp}}$ From this we get
+
+\begin{equation*}
+    \frac{\delta p(x)-\delta p(x+d x)}{\delta p(x)}=\frac{-(d \delta p(x) / d x) d x}{\delta p(x)}=\frac{1}{L_{p}} d x
+\end{equation*}
+
+Thus the total probability that a hole injected at $x = 0$ will recombine in a given $dx$ is the product of the two probabilities:
+
+\begin{equation*}
+    \left(e^{-x / L_{p}}\right)\left(\frac{1}{L_{p}} d x\right)=\frac{1}{L_{p}} e^{-x / L_{p}} d x
+\end{equation*}
+
+\subsection*{c) Show that $L_p$ is the average distance a hole will diffuse before recombining.}
+
+By using the averaging thechnique
+
+\begin{equation*}
+    \langle f(x)\rangle=\int_{-\infty}^{\infty} f(x) P(x) d x
+\end{equation*}
+
+we get
+
+\begin{equation*}
+    \langle x\rangle=\int_{0}^{\infty} x \frac{e^{-x / L_{p}}}{L_{p}} d x=L_{p}
+\end{equation*}
+

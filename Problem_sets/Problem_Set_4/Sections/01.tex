@@ -1,0 +1,48 @@
+\section{Problem 1 - Contact potential}
+
+\textbf{At equilibrium, there can be no net hole or electron current in a p-n junction. Use the criteria\[J_{n}(x)=q\left[\mu_{n} n(x) \mathscr{E}(x)+D_{n} \frac{d n(x)}{d x}\right]=0\]to show that the contact potential \( V_{0} \) is related to the doping concentrations by\[V_{0}=\frac{k T}{q} \ln \frac{N_{a} N_{d}}{n_{i}^{2}} .\]
+}
+
+We can start with \textit{Poisson's equation}
+
+\[\frac{d\mathscr{E}(x)}{dx}=\frac{q}{\epsilon}\left(p-n+N_d^+-N_a^-\right)\]
+
+If we neglect the contribution of carriers (p-n) to the space charge, we have two regions of constant space change and at the same time assuming complete ionization:
+
+\begin{align*}
+    \frac{d \mathscr{E}}{d x} &= \frac{q}{\epsilon} N_{d},  &0<x<x_{n 0} \\
+    \frac{d \mathscr{E}}{d x} &= -\frac{q}{\epsilon} N_{a}, &-x_{p 0}<x<0
+\end{align*}
+
+Furthermore we can find $\mathscr{E}$ by integrating either part of the equations above
+
+
+\begin{align*}
+    \int_{\mathscr{E}_0}^{0}d \mathscr{E} &= \frac{q}{\epsilon} \int_{0}^{x_{n0}}N_{d}dx,  &0<x<x_{n 0} \\
+    \int_{0}^{\mathscr{E}_0}d \mathscr{E} &= -\frac{q}{\epsilon} \int_{-x_{p0}}^{0}N_{a}dx, &-x_{p 0}<x<0
+\end{align*}
+
+Therefore, the maximum calue of the electric field is
+
+\[\mathscr{E}_0=-\frac{q}{\epsilon}N_dx_{n0}=-\frac{q}{\epsilon}N_ax_{p0}\]
+
+From the definition of electric field $\mathscr{E}(x)=-\frac{dV(x)}{dx}$ we get
+
+\[ \mathscr{E}(x)=-\frac{d \mathscr{V}(x)}{d x} \quad\text{or}\quad -V_{0}=\int_{-x_{p 0}}^{x_{n 0}} \mathscr{E}(x) d x \]
+
+\importimagewcaption{electric_field_distrobution.png}{the electric field distribution, where the reference direction for $\mathscr{E}$ is arbitrarily taken as the +x-direction.}
+
+from figure \ref{fig:electric_field_distrobution.png} we can se that The contact potential are related to the width of the depletion region, which gives us
+
+\[V_0=\frac{1}{2}\mathscr{E}_0W=\frac{1}{2}\frac{q}{\epsilon}N_dx_{n0}W\]
+
+Since the balance of charge requirement is \( x_{n 0} N_{d}=x_{p 0} N_{a} \), and \( W \) is simply \( x_{p 0}+x_{n 0} \), we can write \( x_{n 0}=W N_{a} /\left(N_{a}+N_{d}\right) \):
+
+\[V_{0}=\frac{1}{2} \frac{q}{\epsilon} \frac{N_{a} N_{d}}{N_{a}+N_{d}} W^{2}\]
+
+\( V_{0} \) can be written in terms of the doping concentrations
+\[W=\left[\frac{2 \epsilon k T}{q^{2}}\left(\ln \frac{N_{a} N_{d}}{n_{i}^{2}}\right)\left(\frac{1}{N_{a}}+\frac{1}{N_{d}}\right)\right]^{1 / 2}\]
+
+by combining the two equations above we get
+
+\[V_{0}=\frac{k T}{q} \ln \frac{N_{a} N_{d}}{n_{i}^{2}} \]

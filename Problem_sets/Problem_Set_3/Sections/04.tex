@@ -1,0 +1,50 @@
+\section{Problem 4 - The Einstein Relation}
+\textbf{At equilibrium, no net current flows in a semiconductor. Any fluctuation that would begin a diffusion current also sets up an electric field which redistributes carriers by drift. \\Use this fact to show that the diffusion coefficient and the mobility is related by}
+
+\begin{equation*}
+    \frac{D_p}{\mu_p}=\frac{kT}{q}
+\end{equation*}
+
+We start with the  definition of electric field
+
+\begin{equation*}
+    \mathscr{E}(x)=-\frac{d\mathscr{V}(x)}{dx}
+\end{equation*}
+
+At equilibrium we can set the equation below to zero.
+
+\begin{equation*}
+    J_{p}(x)=q \mu_{p} p(x) \mathscr{E}(x)-q D_{p} \frac{d p(x)}{d x}
+\end{equation*}
+
+this gives us
+
+\begin{equation*}
+    \mathscr{E}(x)=\frac{D_{p}}{\mu_{p}} \frac{1}{p(x)} \frac{d p(x)}{d x}
+\end{equation*}
+
+by using
+
+\begin{equation*}
+    p_{0}=n_{i} e^{\left(E_{i}-E_{f}\right) / k T}
+\end{equation*}
+
+for $p(x)$ we get
+
+\begin{equation*}
+    \mathscr{E}(x)=\frac{D_{p}}{\mu_{p}} \frac{1}{k T}\left(\frac{d E_{i}}{d x}-\frac{d E_{F}}{d x}\right)
+\end{equation*}
+
+as the equilibrium Fermi level doesn't vary with $x$ the derived equals to 0.
+
+If we choose $E_i$ as a reference we can relate the electric field to this reference by 
+
+\begin{equation*}
+    \mathscr{E}(x)=-\frac{d \mathscr{V}(x)}{d x}=-\frac{d}{d x}\left[\frac{E_{i}}{(-q)}\right]=\frac{1}{q} \frac{d E_{i}}{d x}
+\end{equation*}
+
+we get 
+
+\begin{equation*}
+    \frac{D_p}{\mu_p}=\frac{kT}{q}
+\end{equation*}

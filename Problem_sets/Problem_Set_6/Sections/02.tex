@@ -1,0 +1,121 @@
+\section{Problem 2 - Transient and A-C Conditions}
+\textbf{Consider a $\mathrm{p}^{+}-\mathrm{n}$ junction, where $Q_p(t)$ denotes the time-dependent excess hole charge in the neutral n-region. }
+\subsection*{a) Explain intuitively why $Q_p(t)$ and the diode current $i(t)$ is related by }
+$$ i(t)=\frac{Q_p(t)}{\tau_p}+\frac{d Q_p(t)}{d t} $$ 
+
+This relationship can be understood in two parts:
+
+\begin{enumerate}
+    \item \textbf{Steady-State Recombination Current:}
+    \subitem The term $\frac{Q_p(t)}{\tau_p}$  represents the recombination current in the base region. Intuitively, this means that the charge carriers (electrons and holes) stored in the base region will recombine and annihilate each other at a rate that is inversely proportional to the lifetime $\tau_p$.The longer the lifetime, the slower the recombination. This term essentially says, "if we leave the stored charge $Q_p(t)$  in the base for a time $\tau_p$, all of it would recombine." So, the rate at which it's recombining at any instant is given by the fraction $\frac{Q_p(t)}{\tau_p}$.
+    \item \textbf{Rate of Change of Stored Charge:}
+    \subitem The term $\frac{d Q_p(t)}{d t}$ represents the rate of change of the stored charge in the base region. This is intuitive because any change in the stored charge $Q_p(t)$ will directly affect the current flowing through the diode. If the stored charge is increasing (i.e., $\frac{d Q_p(t)}{d t}>0$ ), this implies that more carriers are entering the base than leaving, which increases the diode current. Conversely, if the stored charge is decreasing (i.e., $\frac{d Q_p(t)}{d t}<0$ ), this means more carriers are leaving the base than entering, which reduces the diode current.
+\end{enumerate}
+
+To tie everything together:
+\begin{itemize}
+    \item The diode current is affected both by the charge currently stored in the base region and by how that charge is changing with time.
+    \item The first term gives the contribution from the steady-state recombination of stored charge, while the second term gives the contribution from the dynamic change in stored charge.
+\end{itemize}
+
+
+\subsection*{b) Find the stored charge as a function of time when a forward current $I$ is suddenly switched on at time $t=0$. In other words, let }
+$$ i(t)=\left\{
+    \begin{array}{ll} 
+        0 & \text { for } t<0 \\ 
+        I & \text { for } t \geq 0 '
+\end{array} .\right. $$
+
+\textbf{Assume $Q_p(t)=0$ for all $t<0$ and find $Q_p(t)$ for $t \geq 0$. }
+
+ We begin with Laplace transform
+
+$$
+\mathscr{L}\left\{i(t)\right\}=\mathscr{L}\left\{\frac{Q_p(t)}{\tau_p}\right\}+\mathscr{L}\left\{\frac{d Q_p(t)}{d t}\right\}
+$$
+
+For the term $\mathscr{L}\left\{\frac{Q_p(t)}{\tau_p}\right\}$:
+
+$$
+\mathscr{L}\left\{\frac{Q_p(t)}{\tau_p}\right\}=\frac{1}{\tau_p} \mathscr{L}\left\{Q_p(t)\right\}
+$$
+
+For the term $\mathscr{L}\left\{\frac{d Q_p(t)}{d t}\right\}$, using the property:
+
+$$
+\mathcal{L}\left\{\frac{d f(t)}{d t}\right\}=sF(s)-f(0)
+$$
+
+where $F(s)$ is the Laplace transform of $f(t)$ and $f(0)$ is the initial value of $f(t)$, we get:
+$$
+\mathcal{L}\left\{\frac{d Q_p(t)}{d t}\right\}=s \mathcal{L}\left\{Q_p(t)\right\}-Q_p(0)
+$$
+
+For the term $\mathscr{L}\left\{i(t)\right\}$:
+
+$$
+\mathscr{L}\left\{i(t)\right\}= \mathscr{L}\left\{I u(t)\right\}
+$$
+where $u(t)$ is the unit step function
+
+$$
+\mathscr{L}\left\{i(t)\right\}= \frac{I}{s}
+$$
+
+
+Combining the three results:
+$$
+\frac{I}{s}=\frac{1}{\tau_p} \mathcal{L}\left\{Q_p(t)\right\}+s \mathcal{L}\left\{Q_p(t)\right\}-Q_p(0)
+$$
+
+If we let $Q_p(s)$ be the Laplace transform of $Q_p(t)$, and apply the assumption of $Q_p(t)=0$ for $t\leq0$, then:
+\begin{align*}
+    \frac{I}{s}&=\left(\frac{1}{\tau_p} +s \right) Q_p(s)\\
+    \frac{I}{s\left(\frac{1}{\tau_p} +s \right) }&=Q_p(s)\\
+    \frac{I\tau_p}{s(s\tau_p)+1}&=Q_p(s)=\frac{A}{s}+\frac{B}{s\tau_p+1}
+\end{align*}
+
+this gives us 
+
+$$
+I\tau_p=A\left(s\tau_p+1\right)+Bs
+$$
+for $s=0$
+$$I\tau_p=A$$
+
+to find B:
+\begin{align*}
+    I\tau_p-A\left(s\tau_p+1\right)&=Bs\\
+    -I\tau_p\left(s\tau_p\right)&=Bs\\
+    B&=-I\tau_p^2
+\end{align*}
+
+$$Q_p(s)=\frac{I\tau_p}{s}-\frac{I\tau_p^2}{s\tau_p+1}$$
+
+$$Q_p(t)=I\tau_p \left(1-e^{-\frac{t}{\tau_p}}\right)u(t)$$
+
+
+
+\subsection*{c) At any time during the transient, the junction voltage $v(t)$ is related to $\Delta p_n(t)$ by }
+$$ \Delta p_n(t)=p_n\left(e^{\frac{q v(t)}{k T}}-1\right) $$
+\textbf{Use the quasi steady-state approximation 
+$$ \delta p_n\left(x_n, t\right)=\Delta p_n(t) e^{-x_n / L_p} $$
+ to find the junction voltage $v(t)$ as a function of time for the turn-on transient. Assume the neutral n-region is long compared to $L_p$. Sketch $v(t)$ and verify that your result is reasonable for $t \rightarrow \infty$.}
+
+Using the quasi steady-state approximation
+$$ \delta p_n\left(x_n, t\right)=\Delta p_n(t) e^{-x_n / L_p} $$
+we have for the stored charge at any instant
+$$
+Q_p(t)=q A \int_0^{\infty} \Delta p_n(t) e^{-x_n / L_p} d x_n=q A L_p \Delta p_n(t)
+$$
+
+Relating $\Delta p_n(t)$ to $v(t)$ we have
+\begin{align*}
+    \Delta p_n(t)&=p_n\left(e^{q \nu(t) / k T}-1\right)=\frac{Q_p(t)}{q A L_p}\\
+    e^{q \nu(t) / k T}&=\frac{Q_p(t)}{q A L_pp_n}+1\\
+    v(t)&=\frac{kT}{q}\ln \left(\frac{I\tau_p \left(1-e^{-\frac{t}{\tau_p}}\right)u(t)}{q A L_pp_n}+1\right)
+\end{align*}
+
+Using arbitary values for the variables we get
+
+\importimagewcaption{2c.png}{Plot of $v(t)$}

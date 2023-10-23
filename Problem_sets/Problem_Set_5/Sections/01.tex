@@ -1,0 +1,64 @@
+\section{Problem 1 - The Diode Equation}
+\subsection*{a) Sketch the I/V curve for a pn-junction.}
+
+\importimagewcaption{ivpn.png}{$100\%$ selfdrawn  I/V curve for a pn-junction. Source: trust me}
+
+\subsection*{b) The ideal diode equation gives the current through a pn-junction as a function of applied bias voltage. Chapter 5.3 in Streetman presents two different approaches for deriving this equation. One is based on calculating the diffusion currents at the edges of the transition regions, the other is the so-called charge control approximation. Explain (qualitatively) these two methods.}
+
+\subsubsection*{1. Diffusion Currents}
+Diffusion currents in a p-n junction arise due to carrier concentration gradients. In forward bias, excess carriers diffuse, creating a current across the junction. Mathematically, the current density, \( J \), is related to the carrier concentration gradient, expressed via Fick's Law.
+
+\subsubsection*{2. Charge Control Approximation}
+The charge control method perceives the current through a p-n junction as a consequence of changes in stored charge within the depletion region due to an applied bias. The current, \( I \), is theoretically related to the time rate of change of this stored charge.
+
+
+\subsection*{c) Use the steady-state diffusion equation for holes, }
+\textbf{$$ \frac{d^2 \delta p}{d x^2}=\frac{\delta p}{L_p^2}, $$ to show that the excess hole distribution in the n-region is given by $$ \delta p\left(x_n\right)=\Delta p e^{-x_n / L_p} . $$ Let $L$ be the length of the neutral $n$ region and assume $L>>L_p$. Also let $$ \Delta p_n \triangleq \delta p_n\left(x_n=0\right)=p_n\left(e^{q V / k T}-1\right) . $$}
+
+The solution to this equation has the form
+
+$$
+\delta p(x)=C_1 e^{x / L_p}+C_2 e^{-x / L_p}
+$$
+
+as we assume $L>>L_p$ we have $C_1$=0 if $\delta p(x)$ are to be zero for large values. At the same time $\delta p(0)=\Delta p$ this gives $C_2=\Delta p$ and the solution is 
+$$ \delta p\left(x_n\right)=\Delta p e^{-x_n / L_p} . $$
+
+\subsection*{d) Derive the ideal diode equation for a pn-junction using the charge control approximation.}
+$$
+\begin{gathered}
+Q_p=q A \int_0^{\infty} \delta p\left(x_n\right) d x_n \\
+I_p\left(x_n=0\right)=\frac{Q_p}{\tau_p}=\frac{q A L_p}{\tau_p} \Delta p_n
+\end{gathered}
+$$
+
+$$
+\begin{gathered}
+Q_n=-q A \int_0^{\infty} \delta n\left(x_p\right) d x_p \\
+I_n\left(x_p=0\right)=\frac{Q_n}{\tau_n}=\frac{-q A L_n}{\tau_n} \Delta n_p
+\end{gathered}
+$$
+
+$$
+\begin{aligned}
+I & =I_p\left(x_n=0\right)-I_n\left(x_p=0\right)=q A\left(\frac{L_p}{\tau_p} \Delta p_n+\frac{L_n}{\tau_n} \Delta n_p\right) \\
+& =q A\left(\frac{L_p p_n}{\tau_p}+\frac{L_n n_p}{\tau_n}\right)\left(e^{q V / k T}-1\right)
+\end{aligned}
+$$
+
+\subsection*{e) Derive the ideal diode equation by calculating the diffusion currents at the edge of the
+depletion region.}
+
+$$
+\begin{aligned}
+I_n\left(x_p=0\right) & =\left.q A D_n \frac{d \delta n}{d x_p}\right|_{x_p=0} & I_p\left(x_n=0\right) & =-\left.q A D_p \frac{d \delta p}{d x_n}\right|_{x_n=0} \\
+& =-q A \frac{D_n}{L_n} \Delta n_p & & q A \frac{D_p}{L_p} \Delta p_n
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+I & =I_p\left(x_n=0\right)-I_n\left(x_p=0\right)=q A\left(\frac{D_p}{L_p} \Delta p_n+\frac{D_n}{L_n} \Delta n_p\right) \\
+& =q A\left(\frac{D_p p_n}{L_p}+\frac{D_n n_p}{L_n}\right)\left(e^{q V / k T}-1\right)
+\end{aligned}
+$$

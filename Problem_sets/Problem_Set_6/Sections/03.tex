@@ -1,0 +1,136 @@
+\section{Problem 3 - Narrow base diode}
+
+\textbf{Assume that a $\mathrm{p}^{+}-\mathrm{n}$ diode is built with an $\mathrm{n}$-region width $l$ smaller than a hole diffusion length, i.e. $l<L_p$. This is the so-called narrow base diode. Since for this case holes are injected into a short n-region under forward bias, we cannot use the assumption $\delta p_n\left(x_n=\infty\right)=0$ as a boundary condition for the steady-state diffusion equation. Instead, assume that the minority carrier concentration is forced to zero at $x_n=l$ by an ohmic contact to the external circuit.}
+\subsection*{a) Solve the diffusion equation for holes in the neutral n-region to obtain}
+$$
+\delta p_n\left(x_n\right)=\frac{\Delta p_n\left[e^{\left(l-x_n\right) / L_p}-e^{\left(x_n-l\right) / L_p}\right]}{e^{l / L_p}-e^{-l / L_p}}
+$$
+
+\textbf{Sketch $\delta p_n\left(x_n\right)$ for different values of $l / L_p$.}
+
+In steady state cases the diffusion equations can be written as
+
+$$
+\frac{d^2 \delta p}{dx^2}\equiv\frac{\delta p}{L_p^2}
+$$
+
+Given the boundary conditions:
+\begin{enumerate}
+    \item At $x_n=0$:$\delta p_n(o)=\Delta p_n$
+    \item At $x_n=l$:$\delta p_n(l)=0$
+\end{enumerate}
+
+The solution to this equation has the form 
+
+$$\delta p(x)=C_1e^{\frac{x}{L_p}}+C_2e^{-\frac{x}{L_p}}$$
+
+using the boundary conditions we get
+\begin{align*}
+    \Delta p_n&=C_1e^{\frac{0}{L_p}}+C_2e^{-\frac{0}{L_p}}\\
+    C_2&=\Delta p_n-C_1
+\end{align*}
+
+\begin{align*}
+    0&=C_1e^{\frac{l}{L_p}}+C_2e^{-\frac{l}{L_p}}\\
+    C_2&=\frac{-C_1e^{\frac{l}{L_p}}}{e^{-\frac{l}{L_p}}}\\
+    C_2&=-C_1e^{\frac{2l}{L_p}}
+\end{align*}
+
+\begin{align*}
+    \Delta p_n-C_1&=-C_1e^{\frac{2l}{L_p}}\\
+    \Delta p_n&=C_1-C_1e^{\frac{2l}{L_p}}\\
+    \Delta p_n&=C_1\left(1-e^{\frac{2l}{L_p}}\right)\\
+    C_1&=\frac{\Delta p_n}{1-e^{\frac{2l}{L_p}}}
+\end{align*}
+
+\begin{align*}
+    C_2&=-\frac{\Delta p_n e^{\frac{2l}{L_p}}}{1-e^{\frac{2l}{L_p}}} 
+\end{align*}
+
+This gives us the solution
+
+\begin{align*}
+    \delta p_n(x_n)&=\frac{\Delta p_ne^{\frac{x_n}{L_p}}}{1-e^{\frac{2l}{L_p}}}-\frac{\Delta p_n e^{\frac{2l}{L_p}}e^{-\frac{x_n}{L_p}}}{1-e^{\frac{2l}{L_p}}}\\
+    \delta p_n(x_n)&=\frac{\Delta p_n \left[e^{\frac{x_n}{L_p}}-e^{\frac{2l}{L_p}}e^{-\frac{x_n}{L_p}}\right] }{1-e^{\frac{2l}{L_p}}}\\
+    \delta p_n(x_n)&=\frac{\Delta p_n \left[e^{\frac{x_n}{L_p}}e^{-\frac{l}{L_p}}-e^{\frac{2l}{L_p}}e^{-\frac{l}{L_p}}e^{-\frac{x_n}{L_p}}\right] }{e^{-\frac{l}{L_p}}-e^{\frac{2l}{L_p}}e^{-\frac{l}{L_p}}}\\
+    \delta p_n(x_n)&=\frac{\Delta p_n \left[e^{\frac{x_n-l}{L_p}}-e^{\frac{l-x_n}{L_p}}\right] }{e^{-\frac{l}{L_p}}-e^{\frac{l}{L_p}}}\\
+    \delta p_n(x_n)&=\frac{\Delta p_n \left[e^{\frac{l-x_n}{L_p}}-e^{\frac{x_n-l}{L_p}}\right] }{e^{\frac{l}{L_p}}-e^{-\frac{l}{L_p}}}\\
+\end{align*}
+
+\importimagewcaption{3a.png}{Plot of $\delta p_n\left(x_n\right)$ for different values of $l / L_p$.}
+
+
+\subsection*{b) Show that the current in the diode is}
+$$
+I=\left(\frac{q A D_p p_n}{L_p} \operatorname{coth}\left(\frac{l}{L_p}\right)\right)\left(e^{q V / k T}-1\right) .
+$$
+
+\textbf{Compare the magnitude of the current of this narrow base diode to that of a long $\mathrm{p}^{+}-\mathrm{n}$ junction. \\Given:}
+$$
+\operatorname{coth}(x)=\frac{e^x+e^{-x}}{e^x-e^{-x}}
+$$
+
+The hole current density, $J_p$, is the sum of the drift and diffusion current densities, but in the neutral $n$-region, the drift current is zero because there is no electric field. Therefore, the hole current is given by the diffusion current:
+$$
+J_p=-q D_p \frac{d \delta p_n}{d x_n}
+$$
+
+Using the hole concentration, $\delta p_n\left(x_n\right)$, we derived in part a:
+
+Differentiating $\delta p_n\left(x_n\right)$ with respect to $x_n$ :
+$$
+\frac{d \delta p_n}{d x_n}=\frac{\Delta p_n\left[-\frac{1}{L_p} e^{\frac{l-x_n}{L_p}}-\frac{1}{L_p} e^{\frac{x_n-l}{L_p}}\right]}{e^{\frac{l}{L_p}}-e^{-\frac{l}{L_p}}}
+$$
+
+Let's substitute this expression into the equation for $J_p$ to determine the hole current density:
+$$
+J_p=q D_p \frac{\Delta p_n\left[\frac{1}{L_p} e^{\frac{l-x_n}{L_p}}+\frac{1}{L_p} e^{\frac{x_n-l}{L_p}}\right]}{e^{\frac{1}{L_p}}-e^{-\frac{1}{L_p}}}
+$$
+
+At the $p^{+}-n$ junction, $x_n=0$. So:
+$$
+J_p(0)=q D_p \frac{\Delta p_n\left[\frac{1}{L_p} e^{\frac{1}{L_p}}+\frac{1}{L_p} e^{-\frac{1}{L_p}}\right]}{e^{\frac{1}{L_p}}-e^{-\frac{1}{L_p}}}
+$$
+
+Now, the total current $I$ is $J_p$ multiplied by the cross-sectional area, $A$
+$$
+I=A J_p(0)
+$$
+
+Substituting the given relation for $\operatorname{coth}(x)$ :
+$$
+\operatorname{coth}(x)=\frac{e^x+e^{-x}}{e^x-e^{-x}}
+$$
+
+The expression for the current $I$ in the diode is:
+$$
+I=\left(\frac{q A D_p p_n}{L_p} \cdot \frac{\left(e^{\frac{1}{L_p}}+e^{-\frac{1}{L_p}}\right)}{e^{\frac{1}{L_p}}-e^{-\frac{l}{L_p}}}\right)\left(e^{\frac{q V}{k T}}-1\right)
+$$
+
+Using the given relation for $\operatorname{coth}(x)$ :
+$$
+\operatorname{coth}(x)=\frac{e^x+e^{-x}}{e^x-e^{-x}}
+$$
+
+The above equation can be simplified as:
+$$
+I=\left(\frac{q A D_p p_n}{L_p} \cdot \operatorname{coth}\left(\frac{l}{L_p}\right)\right)\left(e^{\frac{q V}{k T}}-1\right)
+$$
+
+Which matches the desired result.
+
+Now, let's compare the magnitude of the current of this narrow base diode to that of a long $p^{+}-n$ junction.
+
+For a long $p^{+}-n$ junction, the current is given by:
+$$
+I=\frac{q A D_p p_n}{L_p}\left(e^{\frac{q V}{k T}}-1\right)
+$$
+
+Comparing the two expressions for $I$, we can see that the current in the narrow base diode is modified by a factor of:
+$$
+\operatorname{coth}\left(\frac{l}{L_p}\right)
+$$
+
+The hyperbolic cotangent function, $\operatorname{coth}(x)$, approaches 1 as $x$ approaches 0 , and as $x$ becomes large, $\operatorname{coth}(x)$ approaches 1 . This means that for a very short $n$-region ( $l$ is small compared to $L_p$ ), the current in the narrow base diode will be close to that of a long $p^{+}-n$ junction. As $l$ increases, the factor $\operatorname{coth}\left(\frac{l}{L_p}\right)$ will continue to be close to 1 , meaning the current will remain close to that of the long junction.
+
+In conclusion, the current in the narrow base diode is modified by the factor $\operatorname{coth}\left(\frac{l}{L_p}\right)$, but for many practical cases, it will be close to the current in a long $p^{+}-n$ junction.

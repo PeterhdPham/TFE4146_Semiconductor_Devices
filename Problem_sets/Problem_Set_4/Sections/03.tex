@@ -1,0 +1,106 @@
+\section{Problem 3 - Equilibrium Junctions}
+
+\subsection*{a) Write equations that relate the charge of the depleted region, the electrical field strength and the electrical potential across a p-n junction.}
+
+The charge of the depleted charge $\rho(x)$, electrical field strenght $\mathscr{E}(x)$ and electrical potential $V(x)$ can be given by starting with the definition of electric field
+
+\[\mathscr{E}(x)=-\frac{dV(x)}{dx}\]
+combined with \textit{Poisson's equation}
+
+\[\frac{d\mathscr{E}(x)}{dx}=\frac{q}{\epsilon}\left(p-n+N_d^+-N_a^-\right)\]
+
+we get 
+
+\[-\frac{d^2V(x)}{dx^2}=\frac{d\mathscr{E}(x)}{dx}=\frac{q}{\epsilon}\left(p-n+N_d^+-N_a^-\right)\]
+
+\importimagewcaption{electrical_field_strength_profiles.png}{Electrical field strength profiles for three different p-n junctions in thermal equilibrium.}
+
+\subsection*{b) Calculate and sketch the potential \( V(x) \) for each of the three profiles \( \mathscr{E}(x) \) in Figure 1. Use \( V(0)=0 \) and apply the variables given in the figure. Assume that \( \Delta \ll a \) when you calculate \( V(x) \) in \( i i i) \). \\Then sketch the electron bands for the p-n junction \( E_{c, v}(x) \) for each of \( \left.\left.i\right)-i i i\right) \). Indicate the approximate position of the Fermi level when sketching the diagrams.\\Determine the contact potential \( V_{0} \) in all of the three p-n junctions. \( \Delta \) must be included in the calculations of \( V_{0} \) in \( \left.i i i\right) \).}
+
+
+\subsubsection*{(i)}
+We can start by redefining the electric field
+\[ \mathscr{E}(x)=\left\{\begin{array}{ll}-\mathscr{E}_{0}\left(1+\frac{2}{a} x\right) & \text { for } \quad \frac{-a}{2} \leq x \leq 0 \\ -\mathscr{E}_{0}\left(1-\frac{2}{a} x\right) & \text { for } \quad 0 \leq x \leq \frac{a}{2}\end{array}\right. \]
+
+Furthermore we can determine the voltage by sepparating into two ranges $-\frac{a}{2}\geq x \geq 0$ and $0\geq x \geq \frac{a}{2}$ and integrate it sepparately for both these two areas. this gives two equation
+
+\[V(x)-V\left(-\frac{a}{2}\right)=\mathscr{E}_{0} \int_{-a / 2}^{x}\left(1+\frac{2}{a} x^{\prime}\right) \mathrm{d} x^{\prime}=\frac{a}{4} \mathscr{E}_{0}\left(1+\frac{2}{a} x\right)^{2}\]
+and
+\[V(x)-V(0)=\mathscr{E}_{0} \int_0^{x}\left(1-\frac{2}{a} x^{\prime}\right) \mathrm{d} x^{\prime}=-\frac{a}{4} \mathscr{E}_{0}\left(1-\frac{2}{a} x\right)^{2}+\frac{a}{4} \mathscr{E}_{0}\]
+
+As the problem states that $V(0)=0$, we get
+
+\[V\left(-\frac{a}{2}\right)=-\frac{a}{4} \mathscr{E}_{0} \quad  \text{and} \quad V\left(\frac{a}{2}\right)=\frac{a}{4} \mathscr{E}_{0}\]
+
+This results in 
+
+\[ V(x)=\left\{\begin{array}{ll}-\frac{a}{4} \mathscr{E}_{0} & \text { for } \quad x<-\frac{a}{2} \\ -\frac{a}{4} \mathscr{E}_{0}\left[1-\left(1+\frac{2}{a} x\right)^{2}\right] & \text { for } \quad-\frac{a}{2} \leq x \leq 0 \\ -\frac{a}{4} \mathscr{E}_{0}\left[\left(1-\frac{2}{a} x\right)^{2}-1\right] & \text { for } 0 \leq x \leq \frac{a}{2} \\ \frac{a}{4} \mathscr{E}_{0} & \text { for } \quad x>\frac{a}{2}\end{array}\right. \]
+\importimagewcaption{3bi.png}{potential $V(x)$, where $\mathscr{E}_0=1$ and $a=2$}
+\subsubsection*{(ii)}
+Here we can write the $\mathscr{E}(x)$ as
+
+\[ \mathscr{E}(x)=-2 \mathscr{E}_{0}\left(1-\frac{2}{a} x\right) \quad \text{for} \quad 0 \leq x \leq \frac{a}{2} \]
+
+Here we only need to look at the voltage $V$ for $x\in\left[0,\frac{a}{2}\right]$, this gives usepackage
+
+
+\[ V(x)-V(0)=2 \mathscr{E}_{0} \int_{0}^{x}\left(1-\frac{2}{a} x^{\prime}\right) \mathrm{d} x^{\prime}=-\frac{a}{2} \mathscr{E}_{0}\left(1-\frac{2 x}{a}\right)^{2}+\frac{a}{2} \mathscr{E}_{0} \]
+
+as $V=0$ we end up with 
+
+\[ V(x)=\left\{\begin{array}{ll}0 & \text { for } \quad x<0 \\ -\frac{a}{2} \mathscr{E}_{0}\left[\left(1-\frac{2}{a} x\right)^{2}-1\right] & \text { for } \quad 0 \leq x \leq \frac{a}{2} \\ \frac{a}{2} \mathscr{E}_{0} & \text { for } \quad x>\frac{a}{2}\end{array}\right. \]
+\importimagewcaption{3bii.png}{potential $V(x)$, where $\mathscr{E}_0=1$ and $a=2$}
+
+\subsubsection*{(iii)}
+
+As $\Delta\ll a$ in figure \ref{fig:electrical_field_strength_profiles.png}, then we can calculate as if the electric field strenght profile has a rectangular form. Tgis gives us a simplified equation
+
+\[ \mathscr{E}(x)=\frac{\mathscr{E}_{0}}{2} \text { for } \quad \frac{-a}{2} \leq x \leq \frac{a}{2} \]
+
+this gives us 
+
+\[ V(x)-V\left(-\frac{a}{2}\right)=\frac{\mathscr{E}_{0}}{2} \int_{-a / 2}^{x} \mathrm{~d} x=\frac{\mathscr{E}_{0}}{2}\left(x+\frac{a}{2}\right) \]
+
+and we end up with 
+
+\[ V(x)=\left\{\begin{array}{ll}-\frac{a}{4} \mathscr{E}_{0} & \text { for } \quad x<-\frac{a}{2} \\ \frac{x}{2} \mathscr{E}_{0} & \text { for } \quad-\frac{a}{2} \leq x \leq \frac{a}{2} \\ \frac{a}{4} \mathscr{E}_{0} & \text { for } \quad x>\frac{a}{2}\end{array}\right. \]
+\importimagewcaption{3biii.png}{potential $V(x)$, where $\mathscr{E}_0=1$ and $a=2$}
+
+\importimagewcaption{3bevc.png}{Electron bands for the p-n junction $E_{c,v}(x)$ for each of $i) - iii)$}
+
+by watching the area below the field profiles in figure \ref{fig:electrical_field_strength_profiles.png} we can se that
+
+\begin{align*}
+    (i)  & \quad V_{0}=\frac{a}{2} \mathscr{E}_{0}\\
+    (ii)  & \quad V_{0}=\frac{a}{2} \mathscr{E}_{0}\\
+    (iii) & \quad V_{0}=\frac{1}{2} \mathscr{E}_{0}(a+\Delta) 
+\end{align*}
+
+\subsection*{c) Calculate and sketch \( \rho(x) \) for all profiles in Figure \ref{fig:electrical_field_strength_profiles.png}. \( \Delta \) must be included in the calculations in iii). Sketch the dopant profile for all three cases assuming ideal diode conditions.}
+
+by using Poissons equation
+\[\rho(x)=\varepsilon\frac{d\mathscr{E}(x)}{dx}\]
+we get
+
+\subsubsection*{(i)} 
+
+\[\rho(x)=\left\{\begin{array}{lll}0 & \text { for } & x<-\frac{a}{2} \\-\frac{2}{a} \varepsilon \mathscr{E}_{0} & \text { for } & -\frac{a}{2} \leq x \leq 0 \\\frac{2}{a} \varepsilon \mathscr{E}_{0} & \text { for } & 0 \leq x \leq \frac{a}{2} \\0 & \text { for } \quad & x>\frac{a}{2}\end{array}\right.\]
+\subsubsection*{(ii) }
+\[\rho(x)=\left\{\begin{array}{ll}0 & \text { for } \quad x<0 \\\frac{4 \varepsilon}{a} \mathscr{E}_{0} & \text { for } \quad 0 \leq x \leq \frac{a}{2} \\0 & \text { for } \quad x>\frac{a}{2}\end{array}\right.\]
+\subsubsection*{(iii) }
+\[\rho(x)=\left\{\begin{array}{ll}0 & \text { for } \quad<-\frac{a+2 \Delta}{2} \\-\frac{\varepsilon}{2 \Delta} \mathscr{E}_{0} & \text { for } \quad-\frac{a+2 \Delta}{2} \leq x<-\frac{a}{2} \\0 & \text { for } \quad-\frac{a}{2} \leq x \leq \frac{a}{2} \\\frac{\varepsilon}{2 \Delta} \mathscr{E}_{0} & \text { for } \quad \frac{a}{2}<x \leq \frac{a+2 \Delta}{2} \\0 & \text { for } \quad x>\frac{a+2 \Delta}{2}\end{array}\right.\]
+
+\importimagewcaption{3c.png}{\( \rho(x) \) for all profiles in Figure \ref{fig:electrical_field_strength_profiles.png}.}
+
+by using the equation that relate the charge of the depleted region, the electrical
+field strength and the electrical potential across a p-n junction from 3a we get
+
+
+\subsubsection*{(i)}
+\[\begin{array}{lll}N_{a}(x)=\frac{2 \varepsilon}{q a} \mathscr{E}_{0} & \text { for } & x<0 \\N_{d}(x)=\frac{2 \varepsilon}{q a} \mathscr{E}_{0} & \text { for } & x>0\end{array}\]
+\subsubsection*{(ii)}
+\[\begin{array}{lll}N_{a}(x) \gg \frac{4 \varepsilon}{q a} \mathscr{E}_{0} & \text { for } & x<0 \\N_{d}(x)=\frac{4 \varepsilon}{q a} \mathscr{E}_{0} & \text { for } & x>0\end{array}\]
+\subsubsection*{(iii)}
+\[\begin{array}{lll}N_{a}(x)=\frac{\varepsilon}{2 q \Delta} \mathscr{E}_{0} & \text { for } & x<-\frac{a}{2} \\N_{d}(x)=0 & \text { for } & \frac{-a}{2} \leq x \leq \frac{a}{2} \\N_{d}(x)=\frac{\varepsilon}{2 q \Delta} \mathscr{E}_{0} & \text { for } & x>\frac{a}{2}\end{array}\]
+
+\importimagewcaption{3c2.png}{The dopant profile for all three cases assuming ideal diode conditions.}

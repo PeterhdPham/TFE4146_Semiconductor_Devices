@@ -1,0 +1,25 @@
+\section{Problem 2 - Graded Junction}
+\textbf{The dopant profile of a p-n junction is given by:$$
+N_d-N_a=k\left(x-x_0\right)$$ Assume complete ionization and that an applied external voltage is “located” to the space chargeregion. (no voltage drop in the neutral regions.) Assume that mobile electrons and holes in the depleted area may be neglected (ideal diode conditions.)}
+
+\subsection*{a) Calculate the profile of the electrical field $\mathrm{E}(x)$ in this p-n junction. Determine the maximum value of the electric field, $\mathrm{E}_m$. Sketch the space charge distribution $\rho(x)$ and the profile of the electrical field $\mathrm{E}(x)$.}
+\importimagewcaption{2a.png}{p-n junction with depletion region W, length $x_0$ and applied voltage $v$.}
+Using Poisson's equation
+
+$$
+\frac{\mathrm{d} E}{\mathrm{~d} x}=\frac{q}{\varepsilon}\left(p-n+N_D-N_A\right)
+$$
+
+assuming full ionization we get
+$$
+\frac{\mathrm{d} E}{\mathrm{~d} x}=\frac{q}{\varepsilon}\left(x-x_0\right)
+$$
+We can find E(x) by integrating from $x_0 - \frac{W}{2}$ to $x$
+$$
+E(x)=\frac{q}{\varepsilon} k \int_{x_0-\frac{W}{2}}^x\left(x-x_0\right) \mathrm{d} x=\frac{q k}{2 \varepsilon}\left[\left(x-x_0\right)^2-\left(\frac{W}{2}\right)^2\right]
+$$
+
+\importimagewcaption{Figure_1.png}{Plot of $E(x)$}
+
+\importimagewcaption{Figure_2.png}{Plot of $\rho(x)$}
+

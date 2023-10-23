@@ -1,0 +1,69 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Given values
+a = 2
+E0 = 1  # assuming a value for E0
+epsilon = 1  # assuming a value for epsilon
+Delta = 0.2  # assuming a value for Delta
+q = 1.6e-19  # elementary charge
+
+x = np.linspace(-a-2*Delta, a+2*Delta, 1000)  # x range from -a-2*Delta to a+2*Delta
+
+# (i)
+Na_i = np.piecewise(x, 
+                    [x < 0, x >= 0],
+                    [2 * epsilon / (q * a) * E0, 0])
+Nd_i = np.piecewise(x, 
+                    [x <= 0, x > 0],
+                    [0, 2 * epsilon / (q * a) * E0])
+
+# (ii)
+Na_ii = np.piecewise(x, 
+                     [x < 0, x >= 0],
+                     [100 * 4 * epsilon / (q * a) * E0, 0])  # >> means much larger, so we take 100 times for illustration
+Nd_ii = np.piecewise(x, 
+                     [x <= 0, x > 0],
+                     [0, 4 * epsilon / (q * a) * E0])
+
+# (iii)
+Na_iii = np.piecewise(x, 
+                      [x < -a/2, x >= -a/2],
+                      [epsilon / (2 * q * Delta) * E0, 0])
+Nd_iii = np.piecewise(x, 
+                      [x <= -a/2, (-a/2 < x) & (x <= a/2), x > a/2],
+                      [0, 0, epsilon / (2 * q * Delta) * E0])
+
+# Plotting
+plt.figure(figsize=(15,5))
+
+plt.subplot(1,3,1)
+plt.plot(x, Na_i, label=r'$N_{a}(x)$')
+plt.plot(x, Nd_i, label=r'$N_{d}(x)$')
+plt.title('(i)')
+plt.xlabel('x')
+plt.ylabel(r'$N(x)$')
+plt.grid(True)
+plt.legend()
+
+plt.subplot(1,3,2)
+plt.plot(x, Na_ii, label=r'$N_{a}(x)$')
+plt.plot(x, Nd_ii, label=r'$N_{d}(x)$')
+plt.title('(ii)')
+plt.xlabel('x')
+plt.ylabel(r'$N(x)$')
+plt.grid(True)
+plt.legend()
+
+plt.subplot(1,3,3)
+plt.plot(x, Na_iii, label=r'$N_{a}(x)$')
+plt.plot(x, Nd_iii, label=r'$N_{d}(x)$')
+plt.title('(iii)')
+plt.xlabel('x')
+plt.ylabel(r'$N(x)$')
+plt.grid(True)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
