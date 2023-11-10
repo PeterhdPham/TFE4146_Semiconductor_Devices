@@ -1,0 +1,72 @@
+\section{Problem 1}
+\textbf{Consider a p-n-p BJT with $N_E>N_B>N_C$.}
+\subsection*{a) Sketch the flow of holes and electrons within the transistor. Explain the physical principles behind the different current components.}
+\importimagewcaption{electron_holes_movement}{flow of holes and electrons within the transistor.}
+\begin{enumerate}
+    \item Injected holes lost to recombination in the base. 
+    \item Holes reaching the reverse-biased collector junction.
+    \item Thermally generated electrons and holes making up the reverse saturation current of the collector junction.
+    \item Electrons supplied by the  base contact for recombination with holes.
+    \item Electrons injected across the forward-biasedemitter junction.
+\end{enumerate}
+
+\subsection*{b) In a good p-n-p transistor, the emitter current is composed almost entirely of holes injected into the base and almost all the holes injected by the emitter is collected at the collector. Explain how the width and the doping level of the base region should be chosen in order to achieve this property.}
+
+To achieve this we need the n-type base region to be narrog, and the hole lifetime $\tau_p$ to be long. In other words, we can achieve this by specifying $W_b\ll L_p$ where $W_p$ is the length if the neutral n material of the base and $L_p$ is th ediffusion length for holes in the base. We do also require that the current $I_E$ crossing the emitter junction to be composed almost entirely og holes injected into the base, rather than electrons crossing from base to emitter. This can be achieved by doping the base region lightly compared with the emitter.
+
+
+\subsection*{c) If $I_{Ep}=10 \mathrm{~mA}, I_{En}=100 \mu \mathrm{A}, I_{Cp}=9.8 \mathrm{~mA}$ and $I_{C n}=1 \mu \mathrm{A}$, calculate the base transport factor, emitter injection efficiency, common-base current gain and common-emitter current gain.}
+
+The emitter injection efficiency is given by
+$$\begin{aligned}
+    \gamma &= \frac{i_{Ep}}{i_{En}+i_{Ep}}\\
+    &=\frac{10 \mathrm{~mA}}{10 \mathrm{~mA}+100 \mu \mathrm{A}}\\
+    &=0.99009901 
+\end{aligned}$$
+
+as 
+
+$$
+\begin{aligned}
+    i_C&=Bi_{Ep}\\
+    B&=\frac{i_C}{i_{Ep}}\\
+    &=\frac{9.8 \mathrm{~mA}}{10 \mathrm{~mA}}\\
+    &=0.98
+\end{aligned}
+$$
+
+this gives us $\alpha=B\gamma=0.99009901 \cdot0.98=0.97029703$
+
+and further
+
+$$\begin{aligned}
+    \beta&\equiv\frac{\alpha}{1-\alpha}\\
+    &\equiv\frac{0.97029703}{1-0.97029703}\\
+    &\equiv 32.666666997
+\end{aligned}$$
+
+
+
+\subsection*{d) If the minority stored base charge is $4.9 \cdot 10^{-11} \mathrm{C}$, estimate the base transit time for holes and the life time for holes in the base.}
+
+we have that 
+
+$$\frac{\tau_p}{\tau_t}=\beta$$
+as $Q_n=i_C\tau_t$
+
+we get
+
+$$
+\begin{aligned}
+    tau_t&=\frac{Q_n}{i_C}\\
+    &=g\frac{=4.9 \cdot 10^{-11} \mathrm{C}}{9.8\cdot 10^{-3}A}
+    &=5ns
+\end{aligned}$$
+
+$$
+\begin{aligned}
+    \tau_p&=\beta \cdot\tau_t\\
+    &=32.666666997\cdot5\cdot10^{-9}s\\
+    &=163.33ns
+\end{aligned}
+$$
