@@ -1,0 +1,105 @@
+\section{Problem 2}
+\textbf{In this problem we go through the derivation of the most basic mathematical models for the I-V characteristic of a MOSFET. We will first derive the model valid in the triode region and use this to find an expression valid in the saturation (active) region.}
+\subsection*{a) Draw a cross-section of an NMOS transistor (p-type substrate). Sketch the inversion layer and depletion region when $V_G>V_T, V_S=0$ and $V_D=0$.}
+\importimagewcaption{NMOS_transistor.png}{cross-section of an NMOS transistor}
+
+\subsection*{b) The contributions of the applied gate-voltage is given by}
+\begin{equation}
+    V_G=V_{F B}-\frac{Q_s}{C_i}+\phi_s=V_{F B}-\frac{Q_n+Q_d}{C_i}+\phi_s,
+    \label{eq:gate_voltage}    
+\end{equation}
+
+\textbf{where $V_{F B}$ is the flat-band voltage, $Q_s$ is the total amount of induced charge in the semiconductor per area, $C_i$ is the insulator (oxide) capacitance per area, and $\phi_s$ is the potential at interface between the semiconductor and the insulator. The induced charge $Q_s$ consists of two contributions, the mobile inversion charge $Q_n$ and the fixed charge in the depletion region $Q_d$.}
+\importimagewcaption{inverted_channel_of_an_NMOS_transistor.png}{ The inverted channel of an NMOS transistor. Figure 6-26 in Streetman.}
+
+\textbf{Consider figure \ref{fig:inverted_channel_of_an_NMOS_transistor.png}. When $V_D>0$, the surface potential $\phi_s(x)$, and hence the inversion charge $Q_n(x)$, will no longer be constant throughout the channel, but depend on the potential $V_x$. Let $0<V_D<\left(V_G-V_T\right)$ and use equation \ref{eq:gate_voltage} to show that}
+
+
+\begin{equation}
+    Q_n(x)=-C_i\left(V_G-V_T-V_x\right)
+    \label{eq:chargesomething}
+\end{equation}
+\textbf{when the variations of $Q_d$ with respect to $V_x$ is neglected. Discuss the validity of this assumption. Would the variations in $Q_d$ increase or decrease the $Q_n$ ?}
+
+Rewriting equation \ref*{eq:gate_voltage}
+\begin{align}
+    Q_n&=V_{FB} C_i -Q_d + \phi_s C_i-V_GC_i\\
+    &=-C_i\left[V_G-\left(V_{FB}+\phi_s-\frac{Q_d}{C_i}\right)\right]
+\end{align}
+
+At threshold, the term in brackets can be written as $V_G-V_T$, but with a voltage $V_D$ applied, there is a voltage rise $V_x$ from the source to each point $x$ in the channel.
+
+\begin{equation}
+    Q_n=-C_i\left[V_G-V_{F B}-2 \phi_F-V_x-\frac{1}{C_i} \sqrt{2 q \epsilon_s N_a\left(2 \phi_F+V_x\right)}\right]
+    \label{eq:q_n}
+\end{equation}
+
+as we neglect the variations of $Q_d$ with respect to $V_x$ the equation gets simoplified to 
+
+\begin{equation}
+    Q_n(x)=-C_i\left(V_G-V_T-V_x\right)
+\end{equation}
+
+\subsection*{c) The drain current $I_D$ is given by}
+\begin{equation}
+    I_D=Z Q_n(x) \bar{\mu}_n \mathrm{E}_x(x),
+    \label{eq:drain_current}    
+\end{equation}
+
+\textbf{where $Z$ is the width of the gate, $\bar{\mu}_n$ is the surface electron mobility and} 
+\begin{equation}
+    \mathrm{E}_x(x)=-\frac{d V_x}{d x}
+    \label{eq:e_x}    
+\end{equation}
+
+\textbf{is the component of the E-field in the $x$-direction. Use equations \ref*{eq:chargesomething} and \ref*{eq:e_x} to show that the drain current in this region is given by}
+$$
+I_D=\frac{\bar{\mu}_n Z C_i}{L}\left[\left(V_G-V_T\right) V_D-\frac{1}{2} V_D^2\right]
+$$
+
+at point $x$ we have
+
+\begin{equation}
+    I_D dx=\overline{\mu_n}Z|Q_n(x)|dV_x
+    \label{eq:idx}
+\end{equation}
+
+If we integrate from source to drain,
+
+$$
+\begin{aligned}
+\int_0^L I_D d x & =\bar{\mu}_n Z C_i \int_0^{V_D}\left(V_G-V_T-V_x\right) d V_x \\
+I_D & =\frac{\bar{\mu}_n Z C_i}{L}\left[\left(V_G-V_T\right) V_D-\frac{1}{2} V_D^2\right]
+\label{eq:id}
+\end{aligned}
+$$
+
+
+\subsection*{d) Sketch the inversion layer and depletion region in the transistor when the drain-voltage is increased such that $V_D=\left(V_G-V_T\right)$.}
+
+\importimagewcaption{NMOS_2.png}{The inversion layer and depletion region in the transistor when the drain-voltage is increased such that $V_D=\left(V_G-V_T\right)$.}
+
+\subsection*{e) The square-law model is the simplest (useful) model describing the drain current of a MOSFET operating in saturation and strong inversion. This model assumes $I_D$ to be independent of $V_D$ when $V_G>V_T$ and $V_D>\left(V_G-V_T\right)$. Use this assumption to show that this saturation current is given by}
+
+$$
+I_D(\text { sat. })=\frac{1}{2} \bar{\mu}_n C_i \frac{Z}{L}\left(V_G-V_T\right)^2 .
+$$
+
+the saturation condition is approximately given by 
+
+$$V_D(sat.)\cong V_G-V_T$$
+
+If we substitute this approximation into \ref*{eq:id} we get
+$$
+I_D \text { (sat.) } \cong \frac{1}{2} \bar{\mu}_n \mathrm{C}_i \frac{Z}{L}\left(V_G-V_T\right)^2
+$$
+
+
+\subsection*{f) Explain why $I_D$ may be approximated as independent of $V_D$ in the saturation region. Explain some of the physical effects we neglect and discuss the validity of this approximation for different values of $L$ and $V_D$.}
+
+As the drain voltage is increased, the coltage acros the oxide decreqases near the drain, and $Q_n$ becomes smaller. This results in the channel being pinched off at the drain end, and the current saturates.
+
+The charge $Q_d$ is often assumed constant and its variation with respect to the channel voltage $V_x$ is neglected. This is valid as when a MOSFET is in a strong inversion ($V_G>V_T$), the mobile inversion charge $Q_n$ is much larger than the depletion charge $Q_d$.
+
+We can approximate $L$ for longer channel length(?)
+

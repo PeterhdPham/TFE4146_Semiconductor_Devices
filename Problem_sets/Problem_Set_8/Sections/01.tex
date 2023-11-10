@@ -1,0 +1,67 @@
+\section{Problem 1}
+
+\textbf{Figure \ref{fig:capacitance_vs_voltage.png} shows the high frequency capacitance vs. voltage ( $C-V$ characteristics) of an n-channel MOSFET, made from p-type Si substrate with a dopant concentration of $N_a=5 \cdot 10^{15} \mathrm{~cm}^{-3}$ and use of $\mathrm{n}^{+}$-polysilicon gate electrode. The thickness of the oxide in the gate area is $d_{o x}=100\text{Å}$, and the effective interface charge $Q_i=4 \cdot 10^{10} q\left[\mathrm{C} \mathrm{cm}^{-2}\right]$. Assume room temperature: $T=295$ $\mathrm{K}$.}
+
+\importimagewcaption{capacitance_vs_voltage.png}{High frequency capacitance vs. voltage of an n-channel MOSFET}
+
+\subsection*{a) A MOSFET of this kind has two contributions to the capacitance: $C_i$ and $C_s$. Describe the mechanisms behind these two contributions, draw an equivalent circuit diagram for the MOS capacitance and find an expression for $C_{\min }$ expressed by $C_i$ and $C_s=C_{d, \min }$ (assuming that the component at hand is biased in strong inversion).}
+
+We start by describing the to capacitance:
+\begin{itemize}
+    \item The insulator capacitance $C_i$:
+    \subitem This capacitance is given by $C_i=\frac{\epsilon_i}{d}$ where $\epsilon_i$ is the permittivity of the insulator, while $d$ is the insulator thickness. This capacitance is associated woth the metal-oxide part of the mos structure. It behaves a lot like a parallel-plate capacitor as the oxide layer functions as the dielectric, and the capacitance is determined by the permittivity of the oxide material and the thickness of the oxide layer.
+    \item The voltage-dependent semiconductor capacitance $C_s$:
+    \subitem This capacitance is given by $C_s=\frac{qQ}{qV}=\frac{dQ_s}{d\phi_s}$ where $Q_s$ is the space charge density per unit area and $\phi_s$ is the surface potential. This capacitance arise from the formation of a space-charge region withing the semiconductor when a voltage is applied. For less negative voltage the accumulation of electrons at the surface makes the semiconductor surface becomes depleted and a depletion-layer capacitance us added in series with $C_i$
+\end{itemize}
+
+\importimagewcaption{NMOS_transistor.png}{Circuit diagram for the MOS capacitance}
+The minimum MOS capacitance $C_{min}$ is given by 
+
+$$C_{min}= \frac{C_iC_{d,min}}{C_i+C_{d,min}}$$
+
+as $C_s=C_{d,min}$ we get
+
+$$C_{min}= \frac{C_iC_{s}}{C_i+C_{s}}$$
+
+\subsection*{b) Determine a numerical value for the capacitance of the MOS structure at hand operating at a negative gate voltage $\left(V_G \ll V_T\right)$ and positive gate voltage $\left(V_G \gg V_T\right)$, respectively.}
+
+For the case  $\left(V_G \ll V_T\right)$:
+
+$$C=C_i=\frac{\epsilon_i}{d}$$
+
+as the relative permittivity $\epsilon_r$ for silicon dioxide is 3.9 and permittivity of free space $\epsilon_0=8.85\cdot10^{-14}\frac{F}{cm}$ this gives us:
+
+$$C=\frac{3.9\cdot8.85\cdot10^{-14}}{10^{-6}}=3.4515\cdot 10^{-7}$$
+
+For the case  $\left(V_G \gg V_T\right)$:
+
+$$C=C_{min}= \frac{C_iC_{s}}{C_i+C_{s}}$$
+
+where $C_s=\frac{\epsilon_s}{W_m}$. We start by calculating $W_m$
+
+
+$$W_m=2\left[\frac{ \epsilon_s \phi_F}{q N_a}\right]^{1 / 2}$$
+
+where $\phi_F$ is given by
+
+$$\phi_F=\frac{kT}{q}\ln \frac{N_a}{n_i}= \frac{1.38\cdot10^{-23}\cdot295}{1.6\cdot10^{-19}}\ln \frac{5\cdot10^{15}}{1.5\cdot10^{10}}=0.324eV$$
+
+this gives
+
+$$W_m=2\left[\frac{11.68\cdot8.85\cdot10^{-14} \cdot 0.324}{1.6\cdot10^{-19} \cdot5\cdot10^{15}}\right]^{1 / 2}=4.1\cdot10^{-5}cm$$
+
+$$\Rightarrow C_s=\frac{11.68\cdot8.85\cdot10^{-14}}{4.1\cdot10^{-5}}=2.52\cdot10^{-8}$$
+
+and we end up with
+
+$$C= \frac{3.4515\cdot 10^{-7}\cdot2.52\cdot10^{-8}}{3.4515\cdot 10^{-7}+2.52\cdot10^{-8}}=2.35\cdot10^{-8}\frac{F}{cm^2}$$
+
+\subsection*{c) Draw a sketch that shows how the $C-V$ characteristics in the figure above changes for low frequencies (typical $\sim 1-100 \mathrm{~Hz}$ ), and explain the reason for this characteristic change in the $C-V$ characteristics.}
+Given:
+\begin{itemize}
+    \item Intrinsic charge carrier density for $\mathrm{Si}: n_i=1.5 \cdot 10^{10} \mathrm{~cm}^{-3}$
+    \item Relative dielectric permittivity for $\mathrm{Si}: \varepsilon_r=11.8$
+    \item Relative dielectric permittivity for $\mathrm{SiO}_2: \varepsilon_r=3.9$
+\end{itemize}
+\importimagewcaptionw{1c.jpg}{Sketch of the C - V characteristic.}{1}
+
